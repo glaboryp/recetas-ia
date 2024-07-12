@@ -1,5 +1,5 @@
 <template>
-  <form v-if="progress === 100">
+  <form v-if="!loading">
     <div class="form-question">
       <Badge value="1" size="large" severity="primary"></Badge>
       <p>¿Qué ingredientes quieres usar?</p>
@@ -21,12 +21,12 @@
       <Slider v-model="time" :step="10" :min="5" :max="120" class="form-slider" />
     </div>
 
-    <Button label="¡Oído cocina!" @click="useCreateRecipe()" />
+    <Button label="¡Oído cocina!" @click="createRecipe()" />
   </form>
 
   <div v-else>
     ¡Preparando tu receta!
-    <ProgressBar :value="progress"></ProgressBar>
+    <ProgressBar mode="indeterminate"></ProgressBar>
   </div>
 </template>
 
@@ -37,7 +37,14 @@ import { useCreateRecipe } from '@/composables/ai'
 const ingredientes = ref('')
 const persons = ref(1)
 const time = ref(5)
-const progress = ref(100)
+const loading = ref(false)
+
+const createRecipe = async () => {
+  loading.value = true
+  const result = await useCreateRecipe(ingredientes.value, persons.value, time.value)
+  console.log(result)
+  loading.value = false
+}
 </script>
 
 <style scoped>

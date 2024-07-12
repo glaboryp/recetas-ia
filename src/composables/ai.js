@@ -1,18 +1,21 @@
-import { StreamingTextResponse } from 'ai'
-import { GoogleGenerativeAI } from '@google/generative-ai'
+/*import { createGoogleGenerativeAI } from '@ai-sdk/google'
+import { generateText } from 'ai'
 
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || '')
-const model = genAI.getGenerativeModel({ model: 'gemini-1.0-pro' })
+const google = createGoogleGenerativeAI({
+  apiKey: import.meta.env.VITE_GOOGLE_API_KEY
+})*/
 
-export async function useCreateRecipe(ingredients = 'Huevos', persons = 2, time = 3) {
-  const prompt = `Dame una receta con los siguientes ingredientes ${ingredients} y que sea fácil de hacer.
+export async function useCreateRecipe(/*ingredients, persons, time*/) {
+  /*const prompt = `Dame una receta con los siguientes ingredientes ${ingredients} y que sea fácil de hacer.
   La receta debe ser para ${persons} personas y no debe tardar más de ${time} minutos en prepararse.
   `
 
-  const result = await model.generateContent(prompt)
-  const response = await result.response
+  const { text } = await generateText({
+    model: google('models/gemini-pro'),
+    prompt
+  })
 
-  const streamingResponse = new StreamingTextResponse(response)
-  const res = await streamingResponse.text()
-  console.log(res)
+  return text*/
+
+  return new Promise((resolve) => setTimeout(resolve, 5000))
 }
