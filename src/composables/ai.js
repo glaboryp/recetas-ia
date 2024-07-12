@@ -1,12 +1,12 @@
-/*import { createGoogleGenerativeAI } from '@ai-sdk/google'
+import { createGoogleGenerativeAI } from '@ai-sdk/google'
 import { generateText } from 'ai'
 
 const google = createGoogleGenerativeAI({
   apiKey: import.meta.env.VITE_GOOGLE_API_KEY
-})*/
+})
 
-export async function useCreateRecipe(/*ingredients, persons, time*/) {
-  /*const prompt = `Dame una receta con los siguientes ingredientes ${ingredients} y que sea fácil de hacer.
+export async function useCreateRecipe(ingredients, persons, time) {
+  const prompt = `Dame una receta con los siguientes ingredientes ${ingredients} y que sea fácil de hacer.
   La receta debe ser para ${persons} personas y no debe tardar más de ${time} minutos en prepararse.
   `
 
@@ -15,7 +15,5 @@ export async function useCreateRecipe(/*ingredients, persons, time*/) {
     prompt
   })
 
-  return text*/
-
-  return new Promise((resolve) => setTimeout(resolve, 5000))
+  return text
 }
