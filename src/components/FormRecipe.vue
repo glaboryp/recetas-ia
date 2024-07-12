@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form v-if="progress === 100">
     <div class="form-question">
       <Badge value="1" size="large" severity="primary"></Badge>
       <p>¿Qué ingredientes quieres usar?</p>
@@ -21,14 +21,18 @@
       <Slider v-model="time" :step="10" :min="5" :max="120" class="form-slider" />
     </div>
 
-    <Button label="¡Oído cocina!" />
+    <Button label="¡Oído cocina!" @click="useCreateRecipe()" />
   </form>
 
-  <ProgressBar :value="progress" v-if="progress < 100"></ProgressBar>
+  <div v-else>
+    ¡Preparando tu receta!
+    <ProgressBar :value="progress"></ProgressBar>
+  </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useCreateRecipe } from '@/composables/ai'
 
 const ingredientes = ref('')
 const persons = ref(1)
