@@ -1,57 +1,34 @@
-# recetas-ia
+# Recetas con Inteligencia Artificial
 
-This template should help get you started developing with Vue 3 in Vite.
+👋🏻 Hola, mi nombre es Gloria, y este proyecto es mi participación en la [hackatón de midudev](https://github.com/midudev/hackaton-vercel-2024), aunque me gustaría seguir mejorándolo y añadiendo nuevas funcionalidades.
 
-## Recommended IDE
+El objetivo de esta aplicación web es permitir a los usuarios generar recetas de cocina a partir de los ingredientes que tienen por casa, y además, que puedan configurar otros parámetros como el número de personas para las que quieren cocinar, el tiempo que tienen disponible, etc.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+El proyecto está creado con vue, utilizando Vercel AI SDK para la conexión con la api de Gemini, y es Open Source, así que si te interesa aportar es super bienvenido.
 
-## Customize configuration
+## 🚀 Contribuir
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+1. Crea un [Fork](https://github.com/glaboryp/recetas-ia/fork) del proyecto
 
-## Project Setup
+2. Clona el repositorio en tu máquina local:
 
-```sh
-npm install
-```
+   ```bash
+   git clone git@github.com:tu_username/recetas-ia.git
+   ```
 
-### Compile and Hot-Reload for Development
+3. Instala las dependencias y ejecuta la aplicación en local
 
-```sh
-npm run dev
-```
+   ```bash
+   npm install
+   npm run dev
+   ```
 
-### Compile and Minify for Production
+4. Realiza los cambios y crea una pull request 🚀
 
-```sh
-npm run build
-```
+## 🛠️ Stack y librerías utilizadas
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- [**Vue**](https://vuejs.org/) - An approachable, performant and versatile framework for building web user interfaces
+- [**Vite**](https://vitejs.dev/) - Next generation frontend tooling
+- [**Vercel AI SDK**](https://sdk.vercel.ai/) - A set of tools for building AI-powered applications
+- [**ESLint**](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [**Prettier**](https://prettier.io/) - An opinionated code formatter.
