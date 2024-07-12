@@ -22,6 +22,9 @@
     </div>
 
     <Button label="¡Oído cocina!" @click="createRecipe()" />
+    <Message severity="error" v-if="alert && !ingredientes"
+      >Debes introducir al menos un ingrediente</Message
+    >
   </form>
 
   <div v-else>
@@ -34,16 +37,25 @@
 import { ref } from 'vue'
 import { useCreateRecipe } from '@/composables/ai'
 
+const emits = defineEmits(['changeStatus', 'changeRecipe'])
+
 const ingredientes = ref('')
 const persons = ref(1)
 const time = ref(5)
 const loading = ref(false)
+const alert = ref(false)
 
 const createRecipe = async () => {
+  if (!ingredientes.value) {
+    alert.value = true
+    return
+  }
   loading.value = true
   const result = await useCreateRecipe(ingredientes.value, persons.value, time.value)
   console.log(result)
   loading.value = false
+  emits('changeRecipe', result)
+  emits('changeStatus', 1)
 }
 </script>
 
@@ -73,5 +85,14 @@ form {
 
 .form-slider {
   width: 90%;
+}
+
+@media (width < 750px) {
+  form {
+    width: 100%;
+  }
+  .form-question {
+    font-size: 1rem;
+  }
 }
 </style>
