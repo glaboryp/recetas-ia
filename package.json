@@ -18,6 +18,7 @@
     "@google/generative-ai": "^0.14.1",
     "@primevue/themes": "^4.0.0",
     "ai": "^3.2.22",
+    "marked": "^13.0.2",
     "pinia": "^2.1.7",
     "primevue": "^4.0.0",
     "vue": "^3.4.29",
