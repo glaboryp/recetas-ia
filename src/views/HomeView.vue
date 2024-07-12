@@ -34,6 +34,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-items: center;
+  max-width: 1300px;
 }
 
 h1 {

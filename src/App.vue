@@ -4,4 +4,8 @@
   <RouterView />
 </template>
 
-<style scoped></style>
+<style>
+body {
+  display: flex;
+}
+</style>
