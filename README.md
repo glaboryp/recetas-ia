@@ -23,7 +23,13 @@ El proyecto está creado con vue, utilizando Vercel AI SDK para la conexión con
    npm run dev
    ```
 
-4. Realiza los cambios y crea una pull request 🚀
+4. Renombra el archivo `.env.example` a `.env` y añade tu API Key de Google Gemini
+
+   ```bash
+   VITE_GOOGLE_API_KEY=your_api_key
+   ```
+
+5. Realiza los cambios y crea una pull request 🚀
 
 ## 🛠️ Stack y librerías utilizadas
 
