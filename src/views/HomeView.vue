@@ -1,48 +1,33 @@
 <template>
-  <main>
-    <h1>¿Tienes poco tiempo y <span class="title-color">quieres comer bien?</span></h1>
-    <h1>
-      ¿Quieres sorprender a los tuyos con una buena comida pero
-      <span class="title-color">no sabes cómo hacerlo?</span>
-    </h1>
-    <h2>
-      Di adiós a las comidas aburridas, con recomendaciones de recetas impulsadas por inteligencia
-      artificial a partir de los ingredientes que tú decidas.
-    </h2>
-
-    <FormRecipe
-      v-if="status === 0"
-      @changeStatus="(n) => (status = n)"
-      @changeRecipe="(n) => (recipe = n)"
-    />
-    <ResultRecipe v-if="status === 1" :recipe="recipe" />
-  </main>
+  <h1>¿Tienes poco tiempo y <span class="title-color">quieres comer bien?</span></h1>
+  <h1>
+    ¿Quieres sorprender a los tuyos con una buena comida pero
+    <span class="title-color">no sabes cómo hacerlo?</span>
+  </h1>
+  <h2>
+    Di adiós a las comidas aburridas, con recomendaciones de recetas impulsadas por inteligencia
+    artificial a partir de los ingredientes que tú decidas.
+  </h2>
+  <Button
+    label="Comenzar"
+    as="router-link"
+    :to="{ name: 'recipe' }"
+    size="large"
+    class="button-start"
+    icon="pi pi-arrow-right"
+    iconPos="right"
+  />
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import FormRecipe from '@/components/FormRecipe.vue'
-import ResultRecipe from '@/components/ResultRecipe.vue'
-
-const status = ref(0)
-const recipe = ref('')
-</script>
+<script setup></script>
 
 <style scoped>
-main {
-  padding: 20px 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  max-width: 1300px;
-}
-
 h1 {
   color: white;
   font-size: 3.5rem;
   line-height: 1.2;
   font-weight: bolder;
+  padding-top: 20px;
 }
 
 h2 {
@@ -56,30 +41,37 @@ h2 {
   font-weight: bolder;
 }
 
-@media (width < 900px) {
-  main {
-    padding: 20px 50px;
-  }
+.button-start {
+  margin-top: 70px;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
 }
 
 @media (width < 750px) {
-  main {
-    padding: 20px 30px;
-  }
   h1 {
     font-size: 2.5rem;
   }
+  .button-start {
+    margin-top: 60px;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
 }
 
-@media (width < 500px) {
-  main {
-    padding: 20px 10px;
-  }
+@media (width < 515px) {
   h1 {
     font-size: 1.7rem;
   }
   h2 {
     font-size: 1.2rem;
+  }
+  .button-start {
+    margin-top: 40px;
+    font-size: 1rem;
+    padding: 5px 10px;
   }
 }
 </style>
