@@ -8,12 +8,18 @@
 
     <div class="form-question">
       <Badge value="2" size="large" severity="primary"></Badge>
+      <p>¿Qué comida quieres hacer?</p>
+    </div>
+    <Select v-model="lunch" :options="lunchOptions" optionLabel="name" fluid />
+
+    <div class="form-question">
+      <Badge value="3" size="large" severity="primary"></Badge>
       <p>¿Para cuántas personas estás cocinando?</p>
     </div>
     <InputNumber v-model="persons" fluid showButtons />
 
     <div class="form-question">
-      <Badge value="3" size="large" severity="primary"></Badge>
+      <Badge value="4" size="large" severity="primary"></Badge>
       <p>¿Cuánto tiempo tienes?</p>
     </div>
     <div class="form-time">
@@ -40,10 +46,19 @@ import { useCreateRecipe } from '@/composables/ai'
 const emits = defineEmits(['changeStatus', 'changeRecipe'])
 
 const ingredientes = ref('')
+const lunch = ref('')
 const persons = ref(1)
 const time = ref(5)
 const loading = ref(false)
 const alert = ref(false)
+
+const lunchOptions = [
+  { name: 'Desayuno' },
+  { name: 'Aperitivo' },
+  { name: 'Almuerzo' },
+  { name: 'Merienda' },
+  { name: 'Cena' }
+]
 
 const createRecipe = async () => {
   if (!ingredientes.value) {
@@ -65,7 +80,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 80%;
+  width: 60%;
 }
 
 .form-question {
