@@ -2,7 +2,9 @@
 @import 'primeicons/primeicons.css';
 
 #app {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   font-weight: normal;
+  height: 95dvh;
 }
