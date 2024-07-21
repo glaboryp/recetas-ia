@@ -5,7 +5,7 @@
 
 <script setup>
 import { marked } from 'marked'
-import { computed } from 'vue'
+import { computed } from 'vue' //
 
 const props = defineProps(['recipe'])
 
