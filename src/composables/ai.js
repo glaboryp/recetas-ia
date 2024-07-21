@@ -5,9 +5,12 @@ const google = createGoogleGenerativeAI({
   apiKey: import.meta.env.VITE_GOOGLE_API_KEY
 })
 
-export async function useCreateRecipe(ingredients, persons, time) {
-  const prompt = `Dame una receta con los siguientes ingredientes ${ingredients} y que sea fácil de hacer.
-  La receta debe ser para ${persons} personas y no debe tardar más de ${time} minutos en prepararse.
+export async function useCreateRecipe(ingredients, persons, time, lunch) {
+  const prompt = `Dame una receta para ${lunch} con los siguientes ingredientes ${ingredients} (y solo estos ingredientes) y que sea fácil de hacer.
+  La receta debe contener los ingredientes que he mencionado anteriormente (son estos: ${ingredients}) y no puede contener ningún otro ingrediente, a no ser que sea un ingrediente básico como sal, aceite, agua, etc.
+  La receta debe ser para ${persons} personas, por lo que tienes que decir la cantidad de ingredientes necesarios para ese número de personas.
+  La receta no debe tardar más de ${time} minutos en prepararse.
+  La receta tiene que ser para ${lunch}.
   `
 
   const { text } = await generateText({

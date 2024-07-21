@@ -28,13 +28,16 @@
     </div>
 
     <Button label="¡Oído cocina!" @click="createRecipe()" />
-    <Message severity="error" v-if="alert && !ingredientes"
+    <Message severity="error" v-if="alertIngredient && !ingredientes"
       >Debes introducir al menos un ingrediente</Message
+    >
+    <Message severity="error" v-if="alertLunch && !lunch"
+      >Debes seleccionar la comida que quieres</Message
     >
   </form>
 
-  <div v-else>
-    ¡Preparando tu receta!
+  <div class="loading" v-else>
+    <p class="loading-text">¡Preparando tu receta!</p>
     <ProgressBar mode="indeterminate"></ProgressBar>
   </div>
 </template>
@@ -50,7 +53,8 @@ const lunch = ref('')
 const persons = ref(1)
 const time = ref(5)
 const loading = ref(false)
-const alert = ref(false)
+const alertIngredient = ref(false)
+const alertLunch = ref(false)
 
 const lunchOptions = [
   { name: 'Desayuno' },
@@ -62,12 +66,15 @@ const lunchOptions = [
 
 const createRecipe = async () => {
   if (!ingredientes.value) {
-    alert.value = true
+    alertIngredient.value = true
+    return
+  }
+  if (!lunch.value) {
+    alertLunch.value = true
     return
   }
   loading.value = true
-  const result = await useCreateRecipe(ingredientes.value, persons.value, time.value)
-  console.log(result)
+  const result = await useCreateRecipe(ingredientes.value, persons.value, time.value, lunch.value)
   loading.value = false
   emits('changeRecipe', result)
   emits('changeStatus', 1)
@@ -100,6 +107,19 @@ form {
 
 .form-slider {
   width: 90%;
+}
+
+.loading {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  height: 70dvh;
+  justify-content: center;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 @media (width < 750px) {
