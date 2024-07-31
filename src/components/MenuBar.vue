@@ -5,7 +5,7 @@
     </template>
     <template #item="{ item, props }">
       <router-link v-slot="{ href, navigate }" :to="{ name: item.route }" custom>
-        <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+        <a v-ripple :href="href" v-bind="props.action" @click="navigate" aria-hidden="false">
           <span :class="item.icon" />
           <span class="ml-2">{{ item.label }}</span>
         </a>
