@@ -4,7 +4,9 @@ import { useAuthStore } from '@/stores/authStore'
 import HomeView from '@/views/HomeView.vue'
 import AuthView from '@/views/AuthView.vue'
 import RecipeView from '@/views/RecipeView.vue'
-import AboutView from '../views/AboutView.vue'
+import AboutView from '@/views/AboutView.vue'
+import UserRecipesView from '@/views/UserRecipesView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
 const pinia = createPinia()
 setActivePinia(pinia)
@@ -37,6 +39,22 @@ const router = createRouter({
       }
     },
     {
+      path: '/user-recipes',
+      name: 'user-recipes',
+      component: UserRecipesView,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ProfileView,
+      meta: {
+        requireAuth: true
+      }
+    },
+    {
       path: '/about',
       name: 'about',
       component: AboutView,
@@ -49,7 +67,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
-  const isAuthenticated = authStore.token != null
+  const isAuthenticated = authStore.token != null && authStore.userId != null
 
   if (to.name === 'login' && isAuthenticated) {
     next('recipe')

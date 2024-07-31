@@ -12,19 +12,29 @@ export const useAuthStore = defineStore(
   () => {
     const token = ref(null)
     const error = ref('')
+    const userId = ref(null)
+    const emailUser = ref(null)
 
-    async function login(email, password, router) {
+    async function login(email, password, router, toast) {
+      if (!email || !password) {
+        toast.add({ severity: 'error', summary: 'Error', detail: 'Por favor, introduzca usuario y contraseña', life: 3000 })
+        return
+      }
       const auth = getAuth()
       signInWithEmailAndPassword(auth, email, password)
         .then((result) => {
           token.value = result.user.accessToken
+          userId.value = result.user.uid
+          emailUser.value = result.user.reloadUserInfo.email
+
           router.push({ name: 'recipe' })
         })
         .catch((error) => {
-          const errorCode = error.code
-          const errorMessage = error.message
-          console.log(errorCode, errorMessage)
-          alert('Error: ' + errorMessage)
+          if (error.code === 'auth/invalid-credential' || error.code === 'auth/invalid-email') {
+            toast.add({ severity: 'error', summary: 'Error', detail: 'El usuario o la contraseña es incorrecta', life: 3000 })
+          } else {
+            toast.add({ severity: 'error', summary: 'Error', detail: error.message, life: 3000 })
+          }
         })
     }
 
@@ -35,6 +45,8 @@ export const useAuthStore = defineStore(
         .then((result) => {
           const credential = GoogleAuthProvider.credentialFromResult(result)
           token.value = credential?.accessToken
+          userId.value = result.user.uid
+
           router.push({ name: 'recipe' })
         })
         .catch((error) => {
@@ -69,11 +81,13 @@ export const useAuthStore = defineStore(
       }
     }
 
-    function logout() {
+    function logout(router) {
       token.value = null
+      userId.value = null
+      router.push({ name: 'login' })
     }
 
-    return { token, error, login, loginGoogle, register, logout }
+    return { token, error, userId, emailUser, login, loginGoogle, register, logout }
   },
   { persist: true }
 )
