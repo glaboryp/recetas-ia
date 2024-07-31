@@ -76,7 +76,17 @@ const createRecipe = async () => {
   loading.value = true
   const result = await useCreateRecipe(ingredientes.value, persons.value, time.value, lunch.value)
   loading.value = false
-  emits('changeRecipe', result)
+
+  const indexOfEndTitle = result.split('**', 2).join('**').length
+  const recipe = {
+    title: result.substring(0, indexOfEndTitle+2),
+    content: result.substring(indexOfEndTitle+2),
+    lunch: lunch.value.name,
+    persons: persons.value,
+    time: time.value
+  }
+
+  emits('changeRecipe', recipe)
   emits('changeStatus', 1)
 }
 </script>
