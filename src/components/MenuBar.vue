@@ -13,11 +13,12 @@
     </template>
     <template #end>
       <SplitButton
-        v-if="authStore.token"
+        v-if="authStore.token && authStore.userId"
         dropdownIcon="pi pi-user"
         :model="itemsUser"
         text
         severity="secondary"
+        aria-hidden="false"
       />
       <Button
         v-else
@@ -33,8 +34,10 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/authStore'
 
+const $router = useRouter()
 const authStore = useAuthStore()
 
 const itemsMenu = ref([
@@ -52,16 +55,18 @@ const itemsMenu = ref([
 const itemsUser = [
   {
     label: 'Mi perfil',
-    icon: 'pi pi-user-edit'
+    icon: 'pi pi-user-edit',
+    command: () => $router.push({ name: 'profile' })
   },
   {
-    label: 'Configuración',
-    icon: 'pi pi-cog'
+    label: 'Mis recetas',
+    icon: 'pi pi-receipt',
+    command: () => $router.push({ name: 'user-recipes' })
   },
   {
     label: 'Cerrar sesión',
     icon: 'pi pi-sign-out',
-    command: () => authStore.logout()
+    command: () => authStore.logout($router)
   }
 ]
 </script>
