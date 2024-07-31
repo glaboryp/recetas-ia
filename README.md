@@ -7,6 +7,9 @@ El objetivo de esta aplicación web es permitir a los usuarios generar recetas d
 El proyecto está creado con vue, utilizando Vercel AI SDK para la conexión con la api de Gemini, y es Open Source, así que si te interesa aportar es super bienvenido.
 
 Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://recetas-ia-sdk.vercel.app/).
+> Puedes usar el siguiente usuario de prueba:
+> - Email: prueba@prueba.com
+> - Contraseña: 1234Prueba
 
 ## 🚀 Contribuir
 
