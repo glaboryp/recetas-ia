@@ -25,10 +25,11 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
    npm run dev
    ```
 
-4. Renombra el archivo `.env.example` a `.env` y añade tu API Key de Google Gemini
+4. Renombra el archivo `.env.example` a `.env` y añade tu API Key de Google Gemini y la API key de Firebase
 
-   ```bash
+   ```
    VITE_GOOGLE_API_KEY=your_api_key
+   VITE_FIREBASE_API_KEY=your_api_key
    ```
 
 5. Realiza los cambios y crea una pull request 🚀
