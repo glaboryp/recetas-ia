@@ -6,7 +6,13 @@
     </div>
     <footer>
       <Button v-if="props.favorite" label="Eliminar de favoritos" @click="deleteRecipe()" />
-      <Button v-else label="Guardar receta como favorita" icon="pi pi-star" iconPos="right" @click="saveRecipe()"  />
+      <Button v-else 
+        label="Guardar receta como favorita" 
+        icon="pi pi-star" iconPos="right" 
+        @click="saveRecipe()" 
+        :disabled="noLogin || noContent" 
+        v-tooltip.bottom="{ value: 'Debe iniciar sesión para realizar esta acción', disabled: !noLogin }" 
+      />
     </footer>
   </section>
 
@@ -34,6 +40,8 @@ const emit = defineEmits(['changeFavorite', 'changeId'])
 
 const recipeTitle = computed(() => marked(props.recipe.title))
 const recipeContent = computed(() => marked(props.recipe.content))
+const noLogin = computed(() => !authStore.token && !authStore.userId)
+const noContent = computed(() => !props.recipe.content)
 
 const saveRecipe = () => {
   const newRecipeKey = push(child(dbRef, 'recipes')).key

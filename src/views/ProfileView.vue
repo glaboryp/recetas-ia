@@ -1,18 +1,20 @@
 <template>
-  <h1>Mi perfil</h1>
-  <form>
-    <div class="form-question">
-      <p>Nombre y apellidos</p>
-    </div>
-    <InputText v-model="name" :invalid="name === null" />
+  <main>
+    <h1 class="title">Mi perfil</h1>
+    <form>
+      <div class="form-question">
+        <p>Nombre y apellidos</p>
+      </div>
+      <InputText v-model="name" :invalid="name === null" />
 
-    <div class="form-question">
-      <p>Correo electónico</p>
-    </div>
-    <InputText v-model="email" disabled/>
+      <div class="form-question">
+        <p>Correo electónico</p>
+      </div>
+      <InputText v-model="email" disabled/>
 
-    <Button label="Guardar datos" @click="writeUserData()" />
-  </form>
+      <Button label="Guardar datos" @click="writeUserData()" />
+    </form>
+  </main>
 
   <Toast />
 </template>
@@ -66,6 +68,23 @@ const writeUserData = () => {
 </script>
 
 <style scoped>
+main {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1300px;
+  height: 100%;
+  align-self: center;
+  width: 100%;
+}
+
+.title {
+  color: #facc15;
+  margin-bottom: 20px;
+}
+
 form {
   margin-top: 30px;
   display: flex;
@@ -81,7 +100,10 @@ form {
   font-size: 1.2rem;
 }
 
-@media (width < 750px) {
+@media (width < 500px) {
+  main {
+    padding: 20px 10px;
+  }
   form {
     width: 100%;
   }
@@ -89,4 +111,5 @@ form {
     font-size: 1rem;
   }
 }
+
 </style>
