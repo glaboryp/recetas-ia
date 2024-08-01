@@ -5,12 +5,12 @@
       <div class="form-question">
         <p>Nombre y apellidos</p>
       </div>
-      <InputText v-model="name" :invalid="name === null" />
+      <InputText v-model="name" :invalid="name === null" id="name" autocomplete="name" />
 
       <div class="form-question">
         <p>Correo electónico</p>
       </div>
-      <InputText v-model="email" disabled/>
+      <InputText v-model="email" disabled id="email" autocomplete="email" />
 
       <Button label="Guardar datos" @click="writeUserData()" />
     </form>
@@ -20,10 +20,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted  } from 'vue'
-import { getDatabase, ref as refFirebase, get, child, update } from "firebase/database"
+import { ref, onMounted } from 'vue'
+import { getDatabase, ref as refFirebase, get, child, update } from 'firebase/database'
 import { useAuthStore } from '@/stores/authStore'
-import { useToast } from 'primevue/usetoast';
+import { useToast } from 'primevue/usetoast'
 
 const dbRef = refFirebase(getDatabase())
 const authStore = useAuthStore()
@@ -36,21 +36,22 @@ onMounted(() => {
   getUserData()
 })
 
-
 const getUserData = () => {
-  get(child(dbRef, `users/${authStore.userId}`)).then((snapshot) => {
-    if (snapshot.exists()) {
-      name.value = snapshot.val().username
-      email.value = snapshot.val().email
-    } else {
-      const updatedData = {}
-      updatedData['users/' + authStore.userId + '/email'] = authStore.emailUser
-      update(dbRef, updatedData)
-      email.value = authStore.emailUser
-    }
-  }).catch((error) => {
-    toast.add({ severity: 'error', summary: 'Info', detail: error, life: 3000 })
-  })
+  get(child(dbRef, `users/${authStore.userId}`))
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        name.value = snapshot.val().username
+        email.value = snapshot.val().email
+      } else {
+        const updatedData = {}
+        updatedData['users/' + authStore.userId + '/email'] = authStore.emailUser
+        update(dbRef, updatedData)
+        email.value = authStore.emailUser
+      }
+    })
+    .catch((error) => {
+      toast.add({ severity: 'error', summary: 'Info', detail: error, life: 3000 })
+    })
 }
 
 const writeUserData = () => {
@@ -58,12 +59,17 @@ const writeUserData = () => {
   updatedData['users/' + authStore.userId + '/username'] = name.value
   updatedData['users/' + authStore.userId + '/email'] = email.value
   update(dbRef, updatedData)
-  .then(() => {
-    toast.add({ severity: 'info', summary: 'Éxito', detail: 'Se ha guardado la información correctamente', life: 3000 })
-  })
-  .catch((error) => {
-    toast.add({ severity: 'error', summary: 'Info', detail: error, life: 3000 })
-  })
+    .then(() => {
+      toast.add({
+        severity: 'info',
+        summary: 'Éxito',
+        detail: 'Se ha guardado la información correctamente',
+        life: 3000
+      })
+    })
+    .catch((error) => {
+      toast.add({ severity: 'error', summary: 'Info', detail: error, life: 3000 })
+    })
 }
 </script>
 
@@ -111,5 +117,4 @@ form {
     font-size: 1rem;
   }
 }
-
 </style>

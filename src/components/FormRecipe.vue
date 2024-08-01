@@ -4,7 +4,7 @@
       <Badge value="1" size="large" severity="primary"></Badge>
       <p>¿Qué ingredientes quieres usar?</p>
     </div>
-    <Textarea v-model="ingredientes" rows="1" />
+    <Textarea v-model="ingredientes" rows="1" id="ingredientes" />
 
     <div class="form-question">
       <Badge value="2" size="large" severity="primary"></Badge>
@@ -16,7 +16,7 @@
       <Badge value="3" size="large" severity="primary"></Badge>
       <p>¿Para cuántas personas estás cocinando?</p>
     </div>
-    <InputNumber v-model="persons" fluid showButtons />
+    <InputNumber v-model="persons" fluid showButtons inputId="persons" />
 
     <div class="form-question">
       <Badge value="4" size="large" severity="primary"></Badge>
@@ -79,8 +79,8 @@ const createRecipe = async () => {
 
   const indexOfEndTitle = result.split('**', 2).join('**').length
   const recipe = {
-    title: result.substring(0, indexOfEndTitle+2),
-    content: result.substring(indexOfEndTitle+2),
+    title: result.substring(0, indexOfEndTitle + 2),
+    content: result.substring(indexOfEndTitle + 2),
     lunch: lunch.value.name,
     persons: persons.value,
     time: time.value
