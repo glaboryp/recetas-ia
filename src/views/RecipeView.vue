@@ -9,7 +9,7 @@
       <div class="recipe-title">
         <Button label="Volver" icon="pi pi-angle-left" text @click="backForm()" />
         <h2>Receta</h2>
-        <div style="width: 98.77px;"></div>
+        <div style="width: 98.77px"></div>
       </div>
       <RecipeCard
         :id="id"
@@ -35,6 +35,7 @@ const id = ref(null)
 const backForm = () => {
   recipe.value = {}
   status.value = 0
+  favorite.value = false
 }
 </script>
 

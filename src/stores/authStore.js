@@ -17,7 +17,12 @@ export const useAuthStore = defineStore(
 
     async function login(email, password, router, toast) {
       if (!email || !password) {
-        toast.add({ severity: 'error', summary: 'Error', detail: 'Por favor, introduzca usuario y contraseña', life: 3000 })
+        toast.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Por favor, introduzca usuario y contraseña',
+          life: 3000
+        })
         return
       }
       const auth = getAuth()
@@ -31,7 +36,12 @@ export const useAuthStore = defineStore(
         })
         .catch((error) => {
           if (error.code === 'auth/invalid-credential' || error.code === 'auth/invalid-email') {
-            toast.add({ severity: 'error', summary: 'Error', detail: 'El usuario o la contraseña es incorrecta', life: 3000 })
+            toast.add({
+              severity: 'error',
+              summary: 'Error',
+              detail: 'El usuario o la contraseña es incorrecta',
+              life: 3000
+            })
           } else {
             toast.add({ severity: 'error', summary: 'Error', detail: error.message, life: 3000 })
           }
@@ -46,6 +56,7 @@ export const useAuthStore = defineStore(
           const credential = GoogleAuthProvider.credentialFromResult(result)
           token.value = credential?.accessToken
           userId.value = result.user.uid
+          emailUser.value = result.user.email
 
           router.push({ name: 'recipe' })
         })
@@ -55,7 +66,6 @@ export const useAuthStore = defineStore(
     }
 
     async function register(name, email, password) {
-      console.log(name, email, password)
       try {
         const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
           method: 'POST',

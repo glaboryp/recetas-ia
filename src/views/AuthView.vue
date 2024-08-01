@@ -18,8 +18,15 @@
             <label for="username">Correo electrónico</label>
           </FloatLabel>
           <FloatLabel>
-            <Password id="password" v-model="password" :feedback="false" toggleMask fluid autocomplete="current-password" />
-            <label for="password">Contraseña</label>
+            <Password
+              inputId="passwordUser"
+              v-model="password"
+              :feedback="false"
+              toggleMask
+              fluid
+              autocomplete="current-password"
+            />
+            <label for="passwordUser">Contraseña</label>
           </FloatLabel>
           <Button
             label="Iniciar sesión"
@@ -31,7 +38,7 @@
     </section>
   </main>
 
-  <Toast position="top-center"/>
+  <Toast position="top-center" />
 </template>
 
 <script setup>
