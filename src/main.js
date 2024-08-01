@@ -9,7 +9,7 @@ import { definePreset } from '@primevue/themes'
 import ToastService from 'primevue/toastservice'
 import { initializeApp } from 'firebase/app'
 import { getAnalytics } from 'firebase/analytics'
-import { getDatabase } from "firebase/database"
+import { getDatabase } from 'firebase/database'
 import App from './App.vue'
 import router from './router'
 
@@ -40,7 +40,10 @@ const MyPreset = definePreset(Aura, {
 
 app.use(PrimeVue, {
   theme: {
-    preset: MyPreset
+    preset: MyPreset,
+    options: {
+      darkModeSelector: '.dark-mode'
+    }
   }
 })
 app.use(ToastService)
