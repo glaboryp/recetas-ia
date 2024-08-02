@@ -18,15 +18,25 @@
         :model="itemsUser"
         text
         severity="secondary"
-        aria-hidden="false"
       />
       <Button
         v-else
         as="router-link"
         label="Iniciar sesión"
         :to="{ name: 'login' }"
-        class="button-sign-in"
+        class="button-icon"
         text
+      />
+      <Button
+        class="button-icon"
+        as="a"
+        icon="pi pi-github"
+        href="https://github.com/glaboryp/recetas-ia"
+        target="_blank"
+        rel="noopener"
+        text
+        aria-label="GitHub"
+        severity="secondary"
       />
     </template>
   </Menubar>
@@ -80,7 +90,11 @@ button.p-button.p-component.p-button-icon-only.p-button-secondary.p-button-text.
   border-radius: 5px;
 }
 
-.button-sign-in {
+.button-icon {
   text-decoration: none;
+}
+
+span.p-button-icon.pi.pi-github {
+  font-size: 1.2rem;
 }
 </style>
