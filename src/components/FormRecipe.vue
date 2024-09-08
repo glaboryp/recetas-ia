@@ -4,13 +4,13 @@
       <Badge value="1" size="large" severity="primary"></Badge>
       <p>¿Qué ingredientes quieres usar?</p>
     </div>
-    <Textarea v-model="ingredientes" rows="1" id="ingredientes" />
+    <Textarea v-model="ingredients" rows="1" id="ingredients" />
 
     <div class="form-question">
       <Badge value="2" size="large" severity="primary"></Badge>
       <p>¿Qué comida quieres hacer?</p>
     </div>
-    <Select v-model="lunch" :options="lunchOptions" optionLabel="name" fluid />
+    <Select v-model="lunch" :options="lunchOptions" optionLabel="name" fluid id="lunch" />
 
     <div class="form-question">
       <Badge value="3" size="large" severity="primary"></Badge>
@@ -27,8 +27,8 @@
       <Slider v-model="time" :step="10" :min="5" :max="120" class="form-slider" />
     </div>
 
-    <Button label="¡Oído cocina!" @click="createRecipe()" />
-    <Message severity="error" v-if="alertIngredient && !ingredientes"
+    <Button label="¡Oído cocina!" @click="createRecipe()" id="button-create" />
+    <Message severity="error" v-if="alertIngredient && !ingredients"
       >Debes introducir al menos un ingrediente</Message
     >
     <Message severity="error" v-if="alertLunch && !lunch"
@@ -48,7 +48,7 @@ import { useCreateRecipe } from '@/composables/ai'
 
 const emits = defineEmits(['changeStatus', 'changeRecipe'])
 
-const ingredientes = ref('')
+const ingredients = ref('')
 const lunch = ref('')
 const persons = ref(1)
 const time = ref(5)
@@ -65,7 +65,7 @@ const lunchOptions = [
 ]
 
 const createRecipe = async () => {
-  if (!ingredientes.value) {
+  if (!ingredients.value) {
     alertIngredient.value = true
     return
   }
@@ -74,7 +74,7 @@ const createRecipe = async () => {
     return
   }
   loading.value = true
-  const result = await useCreateRecipe(ingredientes.value, persons.value, time.value, lunch.value)
+  const result = await useCreateRecipe(ingredients.value, persons.value, time.value, lunch.value)
   loading.value = false
 
   const indexOfEndTitle = result.split('**', 2).join('**').length

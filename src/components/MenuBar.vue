@@ -1,7 +1,7 @@
 <template>
   <Menubar :model="itemsMenu">
     <template #start>
-      <img src="/logo.webp" alt="logo" height="40" />
+      <img src="/logo.webp" alt="logo" height="40" width="40" />
     </template>
     <template #item="{ item, props }">
       <router-link v-slot="{ href, navigate }" :to="{ name: item.route }" custom>
