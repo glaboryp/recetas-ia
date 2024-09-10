@@ -10,3 +10,6 @@ jobs:
         uses: cypress-io/github-action@v6.5.0
         with:
           start: npm run dev
+        env:
+          VITE_FIREBASE_API_KEY: ${{secrets.VITE_FIREBASE_API_KEY}}
+          VITE_GOOGLE_API_KEY: ${{secrets.VITE_GOOGLE_API_KEY}}
