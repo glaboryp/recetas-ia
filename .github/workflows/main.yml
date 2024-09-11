@@ -5,8 +5,27 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Debug Environment Variables
-        run: |
-          echo "FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}"
-          echo "GOOGLE_API_KEY=${{ secrets.VITE_GOOGLE_API_KEY }}"
-          echo "PRUEBA=${{secrets.PRUEBA}}"
+      - name: Checkout
+        uses: actions/checkout@v4.1.7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start application
+        run: npm run dev &
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
+
+      - name: Cypress.io
+        uses: cypress-io/github-action@v6.5.0
+        with:
+          start: npm run dev
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
