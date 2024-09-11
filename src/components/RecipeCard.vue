@@ -5,9 +5,15 @@
       <div v-html="recipeContent"></div>
     </div>
     <footer>
-      <Button v-if="props.favorite" label="Eliminar de favoritos" @click="deleteRecipe()" />
+      <Button
+        v-if="props.favorite"
+        id="button-delete-favorite"
+        label="Eliminar de favoritos"
+        @click="deleteRecipe()"
+      />
       <Button
         v-else
+        id="button-favorite"
         label="Guardar receta como favorita"
         icon="pi pi-star"
         iconPos="right"

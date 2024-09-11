@@ -29,6 +29,7 @@
             <label for="passwordUser">Contraseña</label>
           </FloatLabel>
           <Button
+            id="button-login"
             label="Iniciar sesión"
             @click.prevent="authStore.login(email, password, $router, toast)"
             fluid
