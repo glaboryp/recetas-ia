@@ -19,16 +19,16 @@ jobs:
       - name: Start application
         run: npm run dev &
         env:
-          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
-          VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
+          VITE_FIREBASE_API_KEY: ${{ env.VITE_FIREBASE_API_KEY }}
+          VITE_GOOGLE_API_KEY: ${{ env.VITE_GOOGLE_API_KEY }}
 
       - name: Debug Environment Variables
-        run: echo "FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }} GOOGLE_API_KEY=${{ secrets.VITE_GOOGLE_API_KEY }}"
+        run: echo "FIREBASE_API_KEY=${{ env.VITE_FIREBASE_API_KEY }} GOOGLE_API_KEY=${{ env.VITE_GOOGLE_API_KEY }}"
 
       - name: Cypress.io
         uses: cypress-io/github-action@v6.5.0
         with:
           start: npm run dev
         env:
-          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
-          VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
+          VITE_FIREBASE_API_KEY: ${{ env.VITE_FIREBASE_API_KEY }}
+          VITE_GOOGLE_API_KEY: ${{ env.VITE_GOOGLE_API_KEY }}
