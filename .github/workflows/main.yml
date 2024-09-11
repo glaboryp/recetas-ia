@@ -26,6 +26,7 @@ jobs:
         run: |
           echo "FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}"
           echo "GOOGLE_API_KEY=${{ secrets.VITE_GOOGLE_API_KEY }}"
+          echo "PRUEBA=${{secrets.PRUEBA}}"
 
       - name: Cypress.io
         uses: cypress-io/github-action@v6.5.0
