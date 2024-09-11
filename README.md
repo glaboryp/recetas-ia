@@ -1,6 +1,6 @@
 [![Cypress Test](https://github.com/glaboryp/recetas-ia/actions/workflows/main.yml/badge.svg)](https://github.com/glaboryp/recetas-ia/actions/workflows/main.yml)
 
-# Recetas con Inteligencia Artificial
+# Recetas con Inteligencia Artificial 
 
 👋🏻 Hola, mi nombre es Gloria, y este proyecto es mi participación en la [hackatón de midudev](https://github.com/midudev/hackaton-vercel-2024), aunque me gustaría seguir mejorándolo y añadiendo nuevas funcionalidades.
 
