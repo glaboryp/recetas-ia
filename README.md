@@ -1,3 +1,5 @@
+[![Cypress Test](https://github.com/glaboryp/recetas-ia/actions/workflows/main.yml/badge.svg)](https://github.com/glaboryp/recetas-ia/actions/workflows/main.yml)
+
 # Recetas con Inteligencia Artificial
 
 👋🏻 Hola, mi nombre es Gloria, y este proyecto es mi participación en la [hackatón de midudev](https://github.com/midudev/hackaton-vercel-2024), aunque me gustaría seguir mejorándolo y añadiendo nuevas funcionalidades.
@@ -7,7 +9,9 @@ El objetivo de esta aplicación web es permitir a los usuarios generar recetas d
 El proyecto está creado con vue, utilizando Vercel AI SDK para la conexión con la api de Gemini, y es Open Source, así que si te interesa aportar es super bienvenido.
 
 Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://recetas-ia-sdk.vercel.app/).
+
 > Puedes usar el siguiente usuario de prueba:
+>
 > - Email: prueba@prueba.com
 > - Contraseña: 1234Prueba
 
