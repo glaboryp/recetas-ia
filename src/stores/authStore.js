@@ -5,7 +5,6 @@ export const useAuthStore = defineStore(
   'authstore',
   () => {
     const token = ref(null)
-    const error = ref('')
     const userId = ref(null)
     const emailUser = ref(null)
 
@@ -61,32 +60,6 @@ export const useAuthStore = defineStore(
         })
     }
 
-    async function register(name, email, password) {
-      try {
-        const response = await fetch('http://127.0.0.1:8000/api/auth/register', {
-          method: 'POST',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ name, email, password })
-        })
-
-        const res = await response.json()
-
-        if (!res.status) {
-          error.value = res.message
-          return false
-        }
-
-        token.value = res.token
-        return true
-      } catch (error) {
-        error.value = error.message
-        return false
-      }
-    }
-
     function logout(router) {
       token.value = null
       userId.value = null
@@ -94,7 +67,7 @@ export const useAuthStore = defineStore(
       router.push({ name: 'login' })
     }
 
-    return { token, error, userId, emailUser, login, loginGoogle, register, logout }
+    return { token, userId, emailUser, login, loginGoogle, logout }
   },
   { persist: true }
 )
