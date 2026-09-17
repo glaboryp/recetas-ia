@@ -15,7 +15,7 @@ export async function useCreateRecipe(ingredients, persons, time, lunch) {
   `
 
   const { text } = await generateText({
-    model: google('models/gemini-pro'),
+    model: google('models/gemini-2.5-flash'),
     prompt
   })
 

@@ -7,7 +7,7 @@ describe('Favorite recipes', () => {
   it('mark and unmark as favorite a recipe', () => {
     cy.intercept(
       'POST',
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent'
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent'
     ).as('getRecipe')
     cy.createRecipe('Queso y jamón', 'Desayuno', 15, 25)
     cy.wait('@getRecipe')
