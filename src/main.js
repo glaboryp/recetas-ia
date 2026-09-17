@@ -8,8 +8,6 @@ import Aura from '@primevue/themes/aura'
 import { definePreset } from '@primevue/themes'
 import ToastService from 'primevue/toastservice'
 import { initializeApp } from 'firebase/app'
-import { getAnalytics } from 'firebase/analytics'
-import { getDatabase } from 'firebase/database'
 import App from './App.vue'
 import router from './router'
 
@@ -60,7 +58,6 @@ const firebaseConfig = {
 }
 
 const appAnalytics = initializeApp(firebaseConfig)
-getAnalytics(appAnalytics)
-getDatabase(appAnalytics)
+import('firebase/analytics').then(({ getAnalytics }) => getAnalytics(appAnalytics))
 
 app.mount('#app')

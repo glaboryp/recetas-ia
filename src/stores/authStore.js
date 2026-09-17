@@ -1,11 +1,5 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup
-} from 'firebase/auth'
 
 export const useAuthStore = defineStore(
   'authstore',
@@ -25,6 +19,7 @@ export const useAuthStore = defineStore(
         })
         return
       }
+      const { getAuth, signInWithEmailAndPassword } = await import('firebase/auth')
       const auth = getAuth()
       signInWithEmailAndPassword(auth, email, password)
         .then((result) => {
@@ -49,6 +44,7 @@ export const useAuthStore = defineStore(
     }
 
     async function loginGoogle(router) {
+      const { getAuth, GoogleAuthProvider, signInWithPopup } = await import('firebase/auth')
       const googleProvider = new GoogleAuthProvider()
       const auth = getAuth()
       signInWithPopup(auth, googleProvider)
