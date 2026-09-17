@@ -34,6 +34,7 @@
 import { computed } from 'vue'
 import { marked } from 'marked'
 import { getDatabase, ref as refFirebase, push, child, update } from 'firebase/database'
+import { getAuth } from 'firebase/auth'
 import { useAuthStore } from '@/stores/authStore'
 import { useToast } from 'primevue/usetoast'
 
@@ -56,6 +57,11 @@ const noContent = computed(() => !props.recipe.content)
 
 const saveRecipe = () => {
   try {
+    console.log(
+      'DEBUG saveRecipe auth check',
+      'authStore.userId=' + authStore.userId,
+      'auth.currentUser?.uid=' + getAuth().currentUser?.uid
+    )
     const newRecipeKey = push(child(dbRef, 'recipes')).key
 
     const updatedData = {}
