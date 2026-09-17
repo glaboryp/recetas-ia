@@ -17,3 +17,22 @@
 import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+let browserConsoleLogs = []
+
+Cypress.on('window:before:load', (win) => {
+  browserConsoleLogs = []
+  ;['log', 'error', 'warn'].forEach((method) => {
+    const original = win.console[method]
+    win.console[method] = (...args) => {
+      browserConsoleLogs.push(`[console.${method}] ${args.map(String).join(' ')}`)
+      original.apply(win.console, args)
+    }
+  })
+})
+
+afterEach(function () {
+  if (this.currentTest.state === 'failed') {
+    browserConsoleLogs.forEach((message) => cy.task('log', message))
+  }
+})
