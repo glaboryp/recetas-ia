@@ -55,37 +55,28 @@ const recipeContent = computed(() => marked(props.recipe.content))
 const noLogin = computed(() => !authStore.token && !authStore.userId)
 const noContent = computed(() => !props.recipe.content)
 
-const saveRecipe = () => {
+const saveRecipe = async () => {
   try {
-    console.log(
-      'DEBUG saveRecipe auth check',
-      'authStore.userId=' + authStore.userId,
-      'auth.currentUser?.uid=' + getAuth().currentUser?.uid
-    )
+    // Firebase can accept the login before the Database connection has
+    // finished attaching the auth token to it; forcing a token fetch here
+    // waits for that handshake so the write below isn't rejected as
+    // unauthenticated on its first attempt.
+    await getAuth().currentUser?.getIdToken()
+
     const newRecipeKey = push(child(dbRef, 'recipes')).key
 
     const updatedData = {}
     updatedData['recipes/' + newRecipeKey] = props.recipe
     updatedData['user-recipes/' + authStore.userId + '/' + newRecipeKey] = props.recipe
-    update(dbRef, updatedData)
-      .then(() => {
-        toast.add({
-          severity: 'info',
-          summary: 'Éxito',
-          detail: 'Se ha guardado la información correctamente',
-          life: 3000
-        })
-        emit('changeFavorite', true)
-      })
-      .catch((error) => {
-        console.error(error)
-        toast.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: `Ha ocurrido un error al guardar la información: ${error.message}`,
-          life: 3000
-        })
-      })
+    await update(dbRef, updatedData)
+
+    toast.add({
+      severity: 'info',
+      summary: 'Éxito',
+      detail: 'Se ha guardado la información correctamente',
+      life: 3000
+    })
+    emit('changeFavorite', true)
   } catch (error) {
     console.error(error)
     toast.add({
