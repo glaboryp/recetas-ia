@@ -1,11 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { createPinia, setActivePinia } from 'pinia'
 import { useAuthStore } from '@/stores/authStore'
-import HomeView from '@/views/HomeView.vue'
-import AuthView from '@/views/AuthView.vue'
-import RecipeView from '@/views/RecipeView.vue'
-import UserRecipesView from '@/views/UserRecipesView.vue'
-import ProfileView from '@/views/ProfileView.vue'
 
 const pinia = createPinia()
 setActivePinia(pinia)
@@ -16,7 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: () => import('@/views/HomeView.vue'),
       meta: {
         requireAuth: false
       }
@@ -24,7 +19,7 @@ const router = createRouter({
     {
       path: '/recipe',
       name: 'recipe',
-      component: RecipeView,
+      component: () => import('@/views/RecipeView.vue'),
       meta: {
         requireAuth: false
       }
@@ -32,7 +27,7 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: AuthView,
+      component: () => import('@/views/AuthView.vue'),
       meta: {
         requireAuth: false
       }
@@ -40,7 +35,7 @@ const router = createRouter({
     {
       path: '/user-recipes',
       name: 'user-recipes',
-      component: UserRecipesView,
+      component: () => import('@/views/UserRecipesView.vue'),
       meta: {
         requireAuth: true
       }
@@ -48,7 +43,7 @@ const router = createRouter({
     {
       path: '/profile',
       name: 'profile',
-      component: ProfileView,
+      component: () => import('@/views/ProfileView.vue'),
       meta: {
         requireAuth: true
       }
