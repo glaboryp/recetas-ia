@@ -55,30 +55,40 @@ const noLogin = computed(() => !authStore.token && !authStore.userId)
 const noContent = computed(() => !props.recipe.content)
 
 const saveRecipe = () => {
-  const newRecipeKey = push(child(dbRef, 'recipes')).key
+  try {
+    const newRecipeKey = push(child(dbRef, 'recipes')).key
 
-  const updatedData = {}
-  updatedData['recipes/' + newRecipeKey] = props.recipe
-  updatedData['user-recipes/' + authStore.userId + '/' + newRecipeKey] = props.recipe
-  update(dbRef, updatedData)
-    .then(() => {
-      toast.add({
-        severity: 'info',
-        summary: 'Éxito',
-        detail: 'Se ha guardado la información correctamente',
-        life: 3000
+    const updatedData = {}
+    updatedData['recipes/' + newRecipeKey] = props.recipe
+    updatedData['user-recipes/' + authStore.userId + '/' + newRecipeKey] = props.recipe
+    update(dbRef, updatedData)
+      .then(() => {
+        toast.add({
+          severity: 'info',
+          summary: 'Éxito',
+          detail: 'Se ha guardado la información correctamente',
+          life: 3000
+        })
+        emit('changeFavorite', true)
       })
-      emit('changeFavorite', true)
-    })
-    .catch(() => {
-      toast.add({
-        severity: 'error',
-        summary: 'Error',
-        detail:
-          'Ha ocurrido un error al guardar la información. Por favor, inténtelo en unos minutos',
-        life: 3000
+      .catch((error) => {
+        console.error(error)
+        toast.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: `Ha ocurrido un error al guardar la información: ${error.message}`,
+          life: 3000
+        })
       })
+  } catch (error) {
+    console.error(error)
+    toast.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: `Ha ocurrido un error al guardar la información: ${error.message}`,
+      life: 3000
     })
+  }
 }
 
 const deleteRecipe = () => {
