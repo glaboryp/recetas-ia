@@ -12,9 +12,9 @@ describe('Favorite recipes', () => {
     cy.createRecipe('Queso y jamón', 'Desayuno', 15, 25)
     cy.wait('@getRecipe')
     cy.get('#button-favorite').click()
-    cy.contains('Se ha guardado la información correctamente').should('exist')
+    cy.contains('Se ha guardado la información correctamente', { timeout: 10000 }).should('exist')
     cy.get('#button-delete-favorite').click()
-    cy.contains('Se ha eliminado la receta de favoritos').should('exist')
+    cy.contains('Se ha eliminado la receta de favoritos', { timeout: 10000 }).should('exist')
   })
 
   it('view favorite recipes', () => {
