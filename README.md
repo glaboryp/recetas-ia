@@ -28,8 +28,8 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 3. Instala las dependencias y ejecuta la aplicación en local
 
    ```bash
-   npm install
-   npm run dev
+   pnpm install
+   pnpm run dev
    ```
 
 4. Renombra el archivo `.env.example` a `.env` y añade tu API Key de Google Gemini y la API key de Firebase
