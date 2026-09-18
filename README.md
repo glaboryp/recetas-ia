@@ -54,6 +54,8 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 - [**Vite**](https://vitejs.dev/) - Next generation frontend tooling
 - [**Vercel AI SDK**](https://sdk.vercel.ai/) - A set of tools for building AI-powered applications
 - [**ESLint**](https://eslint.org/) - Find and fix problems in your JavaScript code
-- [**Prettier**](https://prettier.io/) - An opinionated code formatter
-- [**Vitest**](https://vitest.dev/) - Unit testing powered by Vite
-- [**Cypress**](https://www.cypress.io/) - End-to-end testing
+- [**Prettier**](https://prettier.io/) - An opinionated code formatter.
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia [MIT](./LICENSE).
