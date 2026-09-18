@@ -16,16 +16,15 @@ Cypress.Commands.add('createRecipe', (ingredients, lunch, persons, time) => {
 
   const currentValue = 5
   const targetValue = time
-  const increment = 10
-  const steps = (targetValue - currentValue) / increment
-  const arrows = '{rightarrow}'.repeat(steps)
 
-  cy.get('.p-slider-handle')
+  cy.get('.p-slider-handle input[type=range]')
     .as('slider')
     .should('have.attr', 'aria-valuenow', currentValue)
-    .type(arrows)
+    .invoke('val', targetValue)
+  cy.get('@slider').trigger('input', { force: true })
+  cy.get('@slider').trigger('change', { force: true })
 
-  cy.get('.p-slider-handle').should('have.attr', 'aria-valuenow', targetValue)
-  cy.get('@slider').parent().siblings('span').should('have.text', `${time} minutos`)
+  cy.get('.p-slider-handle input[type=range]').should('have.attr', 'aria-valuenow', targetValue)
+  cy.get('@slider').closest('.p-slider').siblings('span').should('have.text', `${time} minutos`)
   cy.get('#button-create').click()
 })
