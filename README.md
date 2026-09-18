@@ -17,6 +17,8 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 
 ## 🚀 Contribuir
 
+> Necesitas Node.js 24.x y [pnpm](https://pnpm.io/).
+
 1. Crea un [Fork](https://github.com/glaboryp/recetas-ia/fork) del proyecto
 
 2. Clona el repositorio en tu máquina local:
@@ -32,11 +34,12 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
    pnpm run dev
    ```
 
-4. Renombra el archivo `.env.example` a `.env` y añade tu API Key de Google Gemini y la API key de Firebase
+4. Renombra el archivo `.env-example` a `.env` y añade tu API Key de Google Gemini, la API key de Firebase y una [PrimeVue license key](https://primeui.dev/licenses/community) (gratuita para desarrolladores individuales)
 
    ```
    VITE_GOOGLE_API_KEY=your_api_key
    VITE_FIREBASE_API_KEY=your_api_key
+   VITE_PRIMEVUE_LICENSE_KEY=your_primevue_license_key
    ```
 
 5. Realiza los cambios y crea una pull request 🚀
@@ -44,6 +47,10 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 ## 🛠️ Stack y librerías utilizadas
 
 - [**Vue**](https://vuejs.org/) - An approachable, performant and versatile framework for building web user interfaces
+- [**Vue Router**](https://router.vuejs.org/) - The official router for Vue.js
+- [**Pinia**](https://pinia.vuejs.org/) - The intuitive store for Vue.js
+- [**PrimeVue**](https://primevue.org/) - The most complete UI component library for Vue
+- [**Firebase**](https://firebase.google.com/) - Authentication and Realtime Database backend
 - [**Vite**](https://vitejs.dev/) - Next generation frontend tooling
 - [**Vercel AI SDK**](https://sdk.vercel.ai/) - A set of tools for building AI-powered applications
 - [**ESLint**](https://eslint.org/) - Find and fix problems in your JavaScript code

@@ -4,8 +4,8 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import PrimeVue from 'primevue/config'
-import Aura from '@primevue/themes/aura'
-import { definePreset } from '@primevue/themes'
+import Aura from '@primeuix/themes/aura'
+import { definePreset } from '@primeuix/themes'
 import ToastService from 'primevue/toastservice'
 import { initializeApp } from 'firebase/app'
 import App from './App.vue'
@@ -37,6 +37,7 @@ const MyPreset = definePreset(Aura, {
 })
 
 app.use(PrimeVue, {
+  license: import.meta.env.VITE_PRIMEVUE_LICENSE_KEY,
   theme: {
     preset: MyPreset,
     options: {
