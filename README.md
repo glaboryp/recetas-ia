@@ -48,3 +48,7 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 - [**Vercel AI SDK**](https://sdk.vercel.ai/) - A set of tools for building AI-powered applications
 - [**ESLint**](https://eslint.org/) - Find and fix problems in your JavaScript code
 - [**Prettier**](https://prettier.io/) - An opinionated code formatter.
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia [MIT](./LICENSE).
