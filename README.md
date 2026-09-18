@@ -17,6 +17,8 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 
 ## 🚀 Contribuir
 
+> Necesitas Node.js 24.x y [pnpm](https://pnpm.io/).
+
 1. Crea un [Fork](https://github.com/glaboryp/recetas-ia/fork) del proyecto
 
 2. Clona el repositorio en tu máquina local:
@@ -45,7 +47,13 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 ## 🛠️ Stack y librerías utilizadas
 
 - [**Vue**](https://vuejs.org/) - An approachable, performant and versatile framework for building web user interfaces
+- [**Vue Router**](https://router.vuejs.org/) - The official router for Vue.js
+- [**Pinia**](https://pinia.vuejs.org/) - The intuitive store for Vue.js
+- [**PrimeVue**](https://primevue.org/) - The most complete UI component library for Vue
+- [**Firebase**](https://firebase.google.com/) - Authentication and Realtime Database backend
 - [**Vite**](https://vitejs.dev/) - Next generation frontend tooling
 - [**Vercel AI SDK**](https://sdk.vercel.ai/) - A set of tools for building AI-powered applications
 - [**ESLint**](https://eslint.org/) - Find and fix problems in your JavaScript code
-- [**Prettier**](https://prettier.io/) - An opinionated code formatter.
+- [**Prettier**](https://prettier.io/) - An opinionated code formatter
+- [**Vitest**](https://vitest.dev/) - Unit testing powered by Vite
+- [**Cypress**](https://www.cypress.io/) - End-to-end testing
