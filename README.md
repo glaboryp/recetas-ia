@@ -32,11 +32,12 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
    pnpm run dev
    ```
 
-4. Renombra el archivo `.env.example` a `.env` y añade tu API Key de Google Gemini y la API key de Firebase
+4. Renombra el archivo `.env-example` a `.env` y añade tu API Key de Google Gemini, la API key de Firebase y una [PrimeVue license key](https://primeui.dev/licenses/community) (gratuita para desarrolladores individuales)
 
    ```
    VITE_GOOGLE_API_KEY=your_api_key
    VITE_FIREBASE_API_KEY=your_api_key
+   VITE_PRIMEVUE_LICENSE_KEY=your_primevue_license_key
    ```
 
 5. Realiza los cambios y crea una pull request 🚀
