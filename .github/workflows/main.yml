@@ -24,7 +24,7 @@ jobs:
         run: pnpm run lint
 
       - name: Cypress.io
-        uses: cypress-io/github-action@v6.5.0
+        uses: cypress-io/github-action@v7.4.4
         with:
           start: pnpm run dev
         env:
