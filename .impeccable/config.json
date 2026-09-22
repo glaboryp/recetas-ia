@@ -1,0 +1,410 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-22T09:12:21.798Z",
+        "reason": "Inter is used only as the secondary body-paragraph face in HomeView.vue, paired with the distinctive Caveat (chalk headline) and Oswald (crate-label/nav) faces that carry the world's identity; it is the same neutral workhorse font already used app-wide for body text (src/assets/base.css), a deliberate distinctive-display + neutral-body pairing, not a default reach."
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "src/components/MenuBar.vue"
+        ],
+        "createdAt": "2026-09-22T09:12:21.929Z",
+        "reason": "The flagged .p-menubar rule sets border-radius: 0 explicitly alongside the 3px accent border-bottom, so there is no rounded-corner clash: the bar is intentionally a flat, unrounded market-awning edge."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.1rem",
+        "files": [
+          "src/views/AuthView.vue"
+        ],
+        "createdAt": "2026-09-22T09:43:48.545Z",
+        "reason": "Intentional new, smaller display-type step for AuthView's restrained greeting line (Operate-mode surface, deliberately quieter than Home's full hero scale, per user's 'discreto y rápido' choice) — not drift, to be folded into the documented type ramp on the next DESIGN.md documentation pass."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.95rem",
+        "files": [
+          "src/views/AuthView.vue"
+        ],
+        "createdAt": "2026-09-22T09:43:48.706Z",
+        "reason": "Intentional smaller primary-button label size for AuthView's plain submit button, distinct from Home's flagship ticket-cta label (1.15rem) which stays the only 'signature' sized control — this is a quieter secondary-page button reusing the same color/family tokens at a smaller step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.75rem",
+        "files": [
+          "src/views/AuthView.vue"
+        ],
+        "createdAt": "2026-09-22T09:44:03.728Z",
+        "reason": "Not a new value: 0.75rem already ships in the approved Home build (.connector label, src/views/HomeView.vue) within DESIGN.md's documented 0.7rem-0.85rem label range — the design.json sidecar just enumerates a single representative label size (0.85rem) rather than the full set already in use."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.78rem",
+        "files": [
+          "src/views/AuthView.vue"
+        ],
+        "createdAt": "2026-09-22T12:45:30.791Z",
+        "reason": "Not a new value: 0.78rem already ships in the approved Home build (.tags-label, src/views/HomeView.vue) within DESIGN.md's documented 0.7rem-0.85rem label range — the design.json sidecar only enumerates one representative label size (0.85rem), not the full set already in use."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.95rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.408Z",
+        "reason": "Reuses the already-established plain-button label size (AuthView's submit button) for FormRecipe's own plain accent button, not a new step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.4rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.420Z",
+        "reason": "New, intentional 'status/loading text' display step (chalk voice, smaller than hero), shared verbatim with UserRecipesView's loading state for consistency."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.3rem",
+        "files": [
+          "src/components/RecipeCard.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.432Z",
+        "reason": "New, intentional card-masthead title size for the recipe card header, distinct from Home's hero display and from the 0.7-0.85rem label range used for tags/nav/ticket."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.95rem",
+        "files": [
+          "src/components/RecipeCard.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.446Z",
+        "reason": "Reuses the already-established plain-button label size (AuthView/FormRecipe) for the card's save/delete-favorite buttons."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.8rem",
+        "files": [
+          "src/views/RecipeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.459Z",
+        "reason": "New, intentional small label size for the 'Volver' back-button text, in the established Oswald label family."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.8rem",
+        "files": [
+          "src/views/RecipeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.474Z",
+        "reason": "New, intentional 'page/section heading' chalk display step, smaller than Home's hero, shared verbatim with UserRecipesView's page title for consistency."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.8rem",
+        "files": [
+          "src/views/UserRecipesView.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.489Z",
+        "reason": "Same new 'page heading' chalk display step as RecipeView's h2 (kept identical on purpose for consistency across the two account-area pages)."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.4rem",
+        "files": [
+          "src/views/UserRecipesView.vue"
+        ],
+        "createdAt": "2026-09-22T13:16:39.501Z",
+        "reason": "Same 'status/loading text' chalk step as FormRecipe's loading-text (kept identical on purpose)."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.78rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:26:42.945Z",
+        "reason": "Original shipped Home value (.tags-label), already reviewed and shipped with a 'ship' verdict before DESIGN.md/design.json existed; the sidecar only records one representative label size."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(0, 0, 0, 0.4)",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:26:42.965Z",
+        "reason": "Original shipped Home value (tag staple-dot shadow), already reviewed and shipped before DESIGN.md/design.json existed."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.75rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:26:42.984Z",
+        "reason": "Original shipped Home value (.connector), already reviewed and shipped before DESIGN.md/design.json existed."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.7rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:26:43.005Z",
+        "reason": "Original shipped Home value (.ticket-number), already reviewed and shipped before DESIGN.md/design.json existed."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.15rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:26:43.024Z",
+        "reason": "Original shipped Home value (.ticket-label), documented in DESIGN.md's Components section as the ticket-cta's own label size, already reviewed and shipped."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.2rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T13:26:43.041Z",
+        "reason": "Original shipped Home value (mobile headline clamp), already reviewed and shipped before DESIGN.md/design.json existed."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.75rem",
+        "files": [
+          "src/views/ProfileView.vue"
+        ],
+        "createdAt": "2026-09-22T14:08:20.401Z",
+        "reason": "Reuses the already-established 0.75rem label size (Home's .connector, Auth's divider) for the card-kicker and field labels, not a new step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2rem",
+        "files": [
+          "src/views/ProfileView.vue"
+        ],
+        "createdAt": "2026-09-22T14:08:20.416Z",
+        "reason": "New but minor chalk display step for the member-card heading, close to and consistent with Auth's restrained greeting scale (clamp max 2.1rem)."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.95rem",
+        "files": [
+          "src/views/ProfileView.vue"
+        ],
+        "createdAt": "2026-09-22T14:08:20.434Z",
+        "reason": "Reuses the already-established plain-button label size (Auth/FormRecipe/RecipeCard) for this surface's save button."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.7rem",
+        "files": [
+          "src/views/ProfileView.vue"
+        ],
+        "createdAt": "2026-09-22T14:13:18.311Z",
+        "reason": "Reuses the already-established 0.7rem label size (Home's ticket-number) for the card's corner kicker."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "3rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T15:22:35.912Z",
+        "reason": "User-requested size increase to Home's own canonical display step, to fill more of the screen; DESIGN.md's type ramp will be updated to match via documenter pass."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.4rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T15:22:35.938Z",
+        "reason": "Same pass: user-requested increase to Home's canonical chalk-note step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.98rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T15:22:35.963Z",
+        "reason": "Same pass: user-requested increase to Home's canonical tag label step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.8rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T15:22:35.982Z",
+        "reason": "Same pass: user-requested increase to Home's canonical ticket-number step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.35rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T15:22:36.001Z",
+        "reason": "Same pass: user-requested increase to Home's canonical ticket-label step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.05rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T15:27:40.839Z",
+        "reason": "Pre-existing order-pad question label size, independent of Home's hero body-copy (which was recently enlarged to 1.2rem for a different context); not part of the current slider/button fix and left as its own appropriately-scaled body text for a compact form label."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T15:30:36.211Z",
+        "reason": "User-requested size increase for this page (order-number badge and time-value label), part of the same enlarge-the-page pass as Home's earlier bump."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.1rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T17:45:36.457Z",
+        "reason": "User asked to slightly scale down the earlier size increase for this page's text (keeping the submit button as-is); dialing the question-label size back down from 1.2rem."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.9rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T17:45:36.480Z",
+        "reason": "Same dial-back: order-number badge and time-value label sizes reduced slightly from the earlier 1rem bump."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.98rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T17:45:36.499Z",
+        "reason": "Same dial-back: input text size reduced slightly from the earlier 1.05rem bump."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.92rem",
+        "files": [
+          "src/views/AuthView.vue"
+        ],
+        "createdAt": "2026-09-22T17:51:18.981Z",
+        "reason": "User-requested size increase to bring Auth in line with the other now-larger screens (Google button label, up from 0.85rem)."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.02rem",
+        "files": [
+          "src/views/AuthView.vue"
+        ],
+        "createdAt": "2026-09-22T17:51:19.005Z",
+        "reason": "Same pass: submit button label and input text size increases, to match the other enlarged screens."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2rem",
+        "files": [
+          "src/views/AuthView.vue"
+        ],
+        "createdAt": "2026-09-22T18:15:08.040Z",
+        "reason": "User-requested size increase for Auth's greeting line, deliberately larger than the shared page-heading step."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.1rem",
+        "files": [
+          "src/views/UserRecipesView.vue"
+        ],
+        "createdAt": "2026-09-22T18:18:46.304Z",
+        "reason": "User-requested size increase for the Favoritos page title."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.35rem",
+        "files": [
+          "src/components/MenuBar.vue"
+        ],
+        "createdAt": "2026-09-22T18:20:17.377Z",
+        "reason": "User-requested size increase for the user-menu and GitHub icon glyphs in the nav bar."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.1rem",
+        "files": [
+          "src/views/RecipeView.vue"
+        ],
+        "createdAt": "2026-09-22T18:24:27.926Z",
+        "reason": "User-requested size increase for the 'Tu receta' title, matching the same bump applied to UserRecipesView's page title."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.78rem",
+        "files": [
+          "src/views/ProfileView.vue"
+        ],
+        "createdAt": "2026-09-22T18:31:43.991Z",
+        "reason": "User-requested size increase to bring ProfileView in line with the other enlarged screens (corner-kicker label, up from 0.7rem)."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.4rem",
+        "files": [
+          "src/views/ProfileView.vue"
+        ],
+        "createdAt": "2026-09-22T18:31:44.010Z",
+        "reason": "Same pass: member-card title size increase."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.02rem",
+        "files": [
+          "src/views/ProfileView.vue"
+        ],
+        "createdAt": "2026-09-22T18:31:44.034Z",
+        "reason": "Same pass: submit button label and input text size increases, matching AuthView's identical bump."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.4rem",
+        "files": [
+          "src/components/FormRecipe.vue"
+        ],
+        "createdAt": "2026-09-22T18:33:13.514Z",
+        "reason": "User-requested size increase for the recipe-loading status text, matching the other enlarged screens."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "2.6rem",
+        "files": [
+          "src/views/HomeView.vue"
+        ],
+        "createdAt": "2026-09-22T19:18:56.605Z",
+        "reason": "User-requested mobile headline size increase for Home."
+      }
+    ]
+  }
+}

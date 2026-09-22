@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T00:00:00Z",
+  "title": "Design System: Recetas IA",
+  "extensions": {
+    "colorMeta": {
+      "market-accent": {
+        "role": "primary",
+        "displayName": "Tomato Accent",
+        "canonical": "#e2572b",
+        "tonalRamp": [
+          "#3a1108",
+          "#5c1c0d",
+          "#7e2812",
+          "#a33718",
+          "#c8461f",
+          "#e2572b",
+          "#ec7f5c",
+          "#f6b8a3"
+        ]
+      },
+      "market-accent-strong": {
+        "role": "primary",
+        "displayName": "Deep Tomato (CTA / plain-button-primary fill)",
+        "canonical": "#b23e1a",
+        "tonalRamp": [
+          "#2a0f06",
+          "#43180a",
+          "#5c210e",
+          "#7a2c13",
+          "#963516",
+          "#b23e1a",
+          "#d15f3c",
+          "#e79579"
+        ]
+      },
+      "market-wood": {
+        "role": "secondary",
+        "displayName": "Crate Wood",
+        "canonical": "#a86a3a",
+        "tonalRamp": [
+          "#2b1a0e",
+          "#432914",
+          "#5c371b",
+          "#764523",
+          "#8f532c",
+          "#a86a3a",
+          "#c08a5f",
+          "#d8ac8c"
+        ]
+      },
+      "market-wood-dark": {
+        "role": "secondary",
+        "displayName": "Wood Dark (nav bar base/valance/staple-dot, borders, recipe-card edge, member-card punch-hole ring)",
+        "canonical": "#7a4b28",
+        "tonalRamp": [
+          "#1e1108",
+          "#301b0d",
+          "#432613",
+          "#573119",
+          "#6a3d20",
+          "#7a4b28",
+          "#9c6a45",
+          "#bf8f6f"
+        ]
+      },
+      "market-bg": {
+        "role": "neutral",
+        "displayName": "Chalkboard Ground",
+        "canonical": "#1f2b22",
+        "tonalRamp": [
+          "#0a0e0b",
+          "#141d16",
+          "#1f2b22",
+          "#2a392e",
+          "#3c4f41",
+          "#556b58",
+          "#7f9483",
+          "#b3c1b6"
+        ]
+      },
+      "market-bg-soft": {
+        "role": "neutral",
+        "displayName": "Chalkboard Ground (soft)",
+        "canonical": "#263427",
+        "tonalRamp": [
+          "#0c110d",
+          "#181f18",
+          "#263427",
+          "#334533",
+          "#465c46",
+          "#5f775f",
+          "#87a087",
+          "#b8c9b8"
+        ]
+      },
+      "market-paper": {
+        "role": "neutral",
+        "displayName": "Butcher Paper",
+        "canonical": "#f4efe1",
+        "tonalRamp": [
+          "#3a3527",
+          "#5c543e",
+          "#7e7455",
+          "#a1946e",
+          "#c4b48c",
+          "#e0d4ba",
+          "#f4efe1",
+          "#fbf8f0"
+        ]
+      },
+      "market-chalk": {
+        "role": "neutral",
+        "displayName": "Chalk White",
+        "canonical": "#f6f1e4",
+        "tonalRamp": [
+          "#3c3728",
+          "#5e563f",
+          "#807656",
+          "#a3966f",
+          "#c6b78c",
+          "#e2d6ba",
+          "#f6f1e4",
+          "#fcfaf3"
+        ]
+      },
+      "market-chalk-dim": {
+        "role": "neutral",
+        "displayName": "Chalk Dim",
+        "canonical": "#cfc7ae",
+        "tonalRamp": [
+          "#2f2b1f",
+          "#494330",
+          "#645c42",
+          "#807656",
+          "#9c9270",
+          "#b9ad8f",
+          "#cfc7ae",
+          "#e6e1d3"
+        ]
+      },
+      "market-ink": {
+        "role": "neutral",
+        "displayName": "Board Ink",
+        "canonical": "#241a10",
+        "tonalRamp": [
+          "#120c07",
+          "#1c150c",
+          "#241a10",
+          "#3a2b1b",
+          "#523d28",
+          "#6d5439",
+          "#8c704f",
+          "#af9370"
+        ]
+      },
+      "market-line": {
+        "role": "neutral",
+        "displayName": "Chalk Hairline",
+        "canonical": "rgba(246, 241, 228, 0.32)",
+        "tonalRamp": [
+          "rgba(246,241,228,0.08)",
+          "rgba(246,241,228,0.16)",
+          "rgba(246,241,228,0.24)",
+          "rgba(246,241,228,0.32)",
+          "rgba(246,241,228,0.4)",
+          "rgba(246,241,228,0.5)",
+          "rgba(246,241,228,0.65)",
+          "rgba(246,241,228,0.85)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Chalk Headline",
+        "purpose": "Home's two-line hero headline only, revealed via chalk-write clip-path animation."
+      },
+      "page-heading": {
+        "displayName": "Chalk Page Heading",
+        "purpose": "Smaller shared Caveat heading step: RecipeView's 'Tu receta', UserRecipesView's list/empty-state heading, and ProfileView's name-echoing member-card heading."
+      },
+      "chalk-note": {
+        "displayName": "Chalk Note",
+        "purpose": "Secondary hand-written line beneath the Home headline; also Auth's greeting line."
+      },
+      "body": {
+        "displayName": "Counter Copy",
+        "purpose": "Long-form Inter text: Home's paragraph, FormRecipe's question text, RecipeCard's markdown content."
+      },
+      "label": {
+        "displayName": "Stencil Label",
+        "purpose": "Ingredient tags, tag caption, connector line, ticket text, nav item labels, form labels, order-pad numerals, plain buttons, recipe-card markdown headings, ProfileView's field labels and corner-stamp card label."
+      }
+    },
+    "shadows": [
+      {
+        "name": "tag-drop",
+        "value": "0 6px 10px rgba(0, 0, 0, 0.28)",
+        "purpose": "Under each ingredient tag, selling it as a physically stapled cardboard object."
+      },
+      {
+        "name": "paper-object-drop",
+        "value": "0 4px 10px rgba(0, 0, 0, 0.28)",
+        "purpose": "Under the flush wood-tone nav bar, the recipe-card, the Toast, and ProfileView's member-card — separating a flush paper/wood object from the scene behind it."
+      },
+      {
+        "name": "order-pad-drop",
+        "value": "0 6px 14px rgba(0, 0, 0, 0.28)",
+        "purpose": "Under FormRecipe's order-pad panel, selling it as a physical notepad resting on the counter."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-reveal",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Exponential ease-out used for all entrance/reveal animation across every surface (Home's chalk-write/fade-up/tag-stamp/ticket-drop sequence, plus one single-element reveal each on FormRecipe, RecipeView, UserRecipesView, and ProfileView). Replaced a bounce/elastic easing flagged during Home's finish review as violating this world's motion-quality floor."
+      },
+      {
+        "name": "order-pad-drop",
+        "value": "translateY(16px)->0 + opacity 0->1, 0.5s ease-reveal",
+        "purpose": "FormRecipe's order-pad single entrance reveal; prefers-reduced-motion disables it."
+      },
+      {
+        "name": "recipe-reveal",
+        "value": "translateY(16px)->0 + opacity 0->1, 0.5s ease-reveal",
+        "purpose": "RecipeView's result-card container entrance reveal; prefers-reduced-motion disables it."
+      },
+      {
+        "name": "title-reveal",
+        "value": "translateY(12px)->0 + opacity 0->1, 0.5s ease-reveal",
+        "purpose": "UserRecipesView's page-heading entrance reveal; prefers-reduced-motion disables it."
+      },
+      {
+        "name": "card-reveal",
+        "value": "translateY(16px)->0 + opacity 0->1, 0.5s ease-reveal",
+        "purpose": "ProfileView's member-card entrance reveal; prefers-reduced-motion disables it."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "750px",
+        "purpose": "Below this width, Home's viewport padding tightens to 28px 18px and its headline clamp steps down; FormRecipe's order-pad goes full width."
+      },
+      {
+        "name": "tablet",
+        "value": "900px",
+        "purpose": "RecipeView padding steps down from 50px 100px to 40px 50px."
+      },
+      {
+        "name": "small-mobile",
+        "value": "480px-500px",
+        "purpose": "Auth card padding tightens; RecipeView padding drops further and button font shrinks; UserRecipesView grid drops to a 300px minmax column; ProfileView's viewport padding tightens to 24px 16px."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ticket CTA",
+      "kind": "button",
+      "refersTo": "ticket-cta",
+      "description": "Home's exclusive signature action: a numbered counter ticket with perforated edges, not a rounded app button. Never replicated on other surfaces. Hover/focus is a direct background-color swap (no filter, no border, no size change) — an earlier filter-based hover shipped with a bug where a leftover PrimeVue Aura border rule grew the button on hover; corrected by adding !important to border/background/color.",
+      "html": "<a class=\"ds-ticket\" href=\"#\" aria-label=\"Comenzar\"><span class=\"ds-ticket-number\">Nº 001</span><span class=\"ds-ticket-label\">Comenzar</span></a>",
+      "css": ".ds-ticket { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; background: #b23e1a; color: #f4efe1; border: none; border-radius: 4px; padding: 18px 34px; text-decoration: none; cursor: pointer; position: relative; isolation: isolate; transition: background-color 0.15s ease-out; } .ds-ticket::before, .ds-ticket::after { content: ''; position: absolute; top: -6px; bottom: -6px; width: 12px; background: radial-gradient(circle, #1f2b22 6px, transparent 6.5px) top / 100% 12px repeat-y; } .ds-ticket::before { left: -6px; } .ds-ticket::after { right: -6px; } .ds-ticket-number { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; font-weight: 500; } .ds-ticket-label { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.35rem; } .ds-ticket:hover, .ds-ticket:focus-visible { background: #e2572b; border: none; } .ds-ticket:focus-visible { outline: 3px solid #f6f1e4; outline-offset: 3px; }"
+    },
+    {
+      "name": "Plain Button Primary",
+      "kind": "button",
+      "refersTo": "plain-button-primary",
+      "description": "The reused, deliberately un-signature action style on every surface after Home (Auth's login submit, FormRecipe's submit, RecipeCard's save-favorite, ProfileView's save). Not a Ticket CTA replica.",
+      "html": "<button class=\"ds-btn-primary\">Iniciar sesión</button>",
+      "css": ".ds-btn-primary { background: #b23e1a; color: #f4efe1; border: none; border-radius: 4px; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.95rem; padding: 0.6em 1.2em; cursor: pointer; } .ds-btn-primary:focus-visible { outline: 3px solid #f6f1e4; outline-offset: 2px; }"
+    },
+    {
+      "name": "Plain Button Secondary",
+      "kind": "button",
+      "refersTo": "plain-button-secondary",
+      "description": "Quieter secondary action: transparent fill with a wood-dark outline. Used for RecipeCard's delete-from-favorites action — deliberately not a destructive/error red, since none exists in this system.",
+      "html": "<button class=\"ds-btn-secondary\">Eliminar de favoritos</button>",
+      "css": ".ds-btn-secondary { background: transparent; color: #241a10; border: 1.5px solid #7a4b28; border-radius: 4px; font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.95rem; padding: 0.6em 1.2em; cursor: pointer; } .ds-btn-secondary:focus-visible { outline: 3px solid #7a4b28; outline-offset: 2px; }"
+    },
+    {
+      "name": "Order Pad",
+      "kind": "custom",
+      "refersTo": "order-pad",
+      "description": "FormRecipe's signature form object: a paper notepad with a perforated top strip and circular Oswald-numeral question chips.",
+      "html": "<div class=\"ds-order-pad\"><div class=\"ds-order-pad-perf\"></div><div class=\"ds-order-question\"><span class=\"ds-order-number\">1</span><p>¿Qué ingredientes quieres usar?</p></div></div>",
+      "css": ".ds-order-pad { position: relative; background: #f4efe1; border-radius: 4px; padding: 30px 28px 28px; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28); } .ds-order-pad-perf { position: absolute; top: 0; left: 16px; right: 16px; height: 8px; background-image: radial-gradient(circle, #7a4b28 2.5px, transparent 2.5px); background-size: 18px 8px; background-repeat: repeat-x; background-position: center; } .ds-order-question { display: flex; align-items: center; gap: 12px; margin-top: 8px; } .ds-order-question p { font-family: Inter, system-ui, sans-serif; color: #241a10; font-size: 1.05rem; font-weight: 500; margin: 0; } .ds-order-number { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #7a4b28; color: #f4efe1; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 0.85rem; }"
+    },
+    {
+      "name": "Recipe Card",
+      "kind": "card",
+      "refersTo": "recipe-card",
+      "description": "Paper recipe-card object shared by the generated-result view and the saved-recipes grid. Sharp corners with a wood-dark top edge as the elevation cue.",
+      "html": "<section class=\"ds-recipe-card\"><header>Receta de Tomate</header><div class=\"ds-recipe-body\"><h3>Ingredientes</h3><ul><li>Tomate</li></ul></div><footer><button class=\"ds-btn-primary\">Guardar receta como favorita</button></footer></section>",
+      "css": ".ds-recipe-card { background: #f4efe1; color: #241a10; border-top: 4px solid #7a4b28; display: flex; flex-direction: column; padding: 1.5rem 1.5rem 1.25rem; gap: 0.5rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28); } .ds-recipe-card header { font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; font-size: 1.3rem; color: #7a4b28; padding-bottom: 0.75rem; margin-bottom: 0.25rem; border-bottom: 1px solid rgba(36, 26, 16, 0.15); } .ds-recipe-body { font-family: Inter, system-ui, sans-serif; color: #241a10; line-height: 1.6; } .ds-recipe-body h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.85rem; color: #7a4b28; margin: 1rem 0 0.4rem; } .ds-recipe-body li::marker { color: #7a4b28; }"
+    },
+    {
+      "name": "Member Card",
+      "kind": "card",
+      "refersTo": "member-card",
+      "description": "ProfileView's 'ficha de socio' signature object — the system's fifth distinct card treatment, not a reuse of the order-pad, recipe-card, or Auth card. Angled cut corner via clip-path, a hanging punch-hole, and a corner-stamp label instead of a kicker.",
+      "html": "<section class=\"ds-member-card\"><span class=\"ds-punch-hole\"></span><span class=\"ds-corner-stamp\">Ficha de socio</span><h1 class=\"ds-member-title\">Ana García</h1><div class=\"ds-member-field\"><label>Nombre y apellidos</label><input type=\"text\" value=\"Ana García\" /></div><div class=\"ds-member-field\"><label>Correo electrónico</label><input type=\"text\" value=\"ana@example.com\" disabled /></div><button class=\"ds-btn-primary\">Guardar datos</button></section>",
+      "css": ".ds-member-card { position: relative; max-width: 360px; background: #f4efe1; padding: 32px 28px 28px; display: flex; flex-direction: column; gap: 20px; clip-path: polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28); } .ds-punch-hole { position: absolute; top: 9px; left: 9px; width: 12px; height: 12px; border-radius: 50%; background: #263427; border: 1.5px solid #7a4b28; } .ds-corner-stamp { position: absolute; top: 14px; right: 20px; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; color: #7a4b28; } .ds-member-title { font-family: 'Caveat', cursive; font-weight: 700; color: #241a10; font-size: clamp(1.6rem, 4vw, 2rem); margin: 8px 0 4px; } .ds-member-field { display: flex; flex-direction: column; gap: 6px; } .ds-member-field label { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; font-size: 0.75rem; color: #7a4b28; } .ds-member-field input { background: #f4efe1; border: 1.5px solid #7a4b28; color: #241a10; border-radius: 3px; padding: 0.5em 0.7em; font-family: Inter, system-ui, sans-serif; } .ds-member-field input:disabled { background: rgba(36, 26, 16, 0.06); opacity: 1; }"
+    },
+    {
+      "name": "Ingredient Tag",
+      "kind": "chip",
+      "refersTo": "tag-chip",
+      "description": "Cardboard ingredient tag with a staple dot, rotated slightly per index; Home's signature component.",
+      "html": "<span class=\"ds-tag\">Tomate</span>",
+      "css": ".ds-tag { font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.98rem; color: #241a10; background: #f4efe1; padding: 10px 20px 9px; border-radius: 2px; position: relative; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.28); transform: rotate(-3deg); display: inline-block; } .ds-tag::before { content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; border-radius: 50%; background: #7a4b28; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); }"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "\"Market awning\" — flush wood-tone bar with a canvas-stripe texture and a scalloped valance below its accent trim; nav items are paper tag chips with a staple dot. Reskin of PrimeVue Menubar via global CSS overrides.",
+      "html": "<nav class=\"ds-navbar\"><a class=\"ds-navlink\" href=\"#\"><span class=\"ds-navlink-staple\"></span>Inicio</a><a class=\"ds-navlink\" href=\"#\"><span class=\"ds-navlink-staple\"></span>Recetas</a></nav>",
+      "css": ".ds-navbar { position: relative; background: #7a4b28; background-image: repeating-linear-gradient(90deg, rgba(36,26,16,0.08) 0px, rgba(36,26,16,0.08) 10px, transparent 10px, transparent 22px); border: none; border-bottom: 2px solid #e2572b; border-radius: 0; padding: 0.6rem 1rem 0.8rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28); display: flex; gap: 0.5rem; } .ds-navbar::after { content: ''; position: absolute; left: 0; right: 0; bottom: -9px; height: 9px; background-image: radial-gradient(circle at 10px 0, #7a4b28 9px, transparent 9.5px); background-size: 20px 9px; background-repeat: repeat-x; pointer-events: none; } .ds-navlink { position: relative; background: #f4efe1; color: #241a10; text-decoration: none; border-radius: 2px; padding: 0.35rem 0.75rem; font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.85rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.28); } .ds-navlink-staple { position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; border-radius: 50%; background: #7a4b28; } .ds-navlink:hover, .ds-navlink:focus-visible { box-shadow: 0 0 0 1.5px #b23e1a, 0 2px 4px rgba(0, 0, 0, 0.28); }"
+    },
+    {
+      "name": "Select Overlay (teleported)",
+      "kind": "input",
+      "refersTo": "overlay",
+      "description": "PrimeVue Select's teleported dropdown overlay, reskinned globally in src/assets/market-world.css since it renders outside FormRecipe's DOM.",
+      "html": "<div class=\"ds-select-overlay\"><div class=\"ds-select-option ds-selected\">Almuerzo</div><div class=\"ds-select-option\">Cena</div></div>",
+      "css": ".ds-select-overlay { background: #f4efe1; border: 1.5px solid #7a4b28; border-radius: 3px; } .ds-select-option { color: #241a10; font-family: Inter, system-ui, sans-serif; padding: 0.5em 0.8em; } .ds-select-option.ds-selected { background: #a86a3a; color: #f4efe1; } .ds-select-option:not(.ds-selected):hover { background: rgba(36, 26, 16, 0.08); }"
+    },
+    {
+      "name": "Toast (teleported)",
+      "kind": "custom",
+      "refersTo": "overlay",
+      "description": "PrimeVue Toast, reskinned globally since it teleports outside its owning view. Severity-mapped icon color is the one narrow accent use outside a headline/CTA context.",
+      "html": "<div class=\"ds-toast\"><span class=\"ds-toast-summary\">Éxito</span><p class=\"ds-toast-detail\">Se ha guardado la información correctamente</p></div>",
+      "css": ".ds-toast { background: #f4efe1; border: 1px solid #7a4b28; border-radius: 3px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28); padding: 0.8em 1em; } .ds-toast-summary { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; color: #241a10; display: block; } .ds-toast-detail { font-family: Inter, system-ui, sans-serif; color: #241a10; margin: 0.25em 0 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Market Chalkboard",
+    "overview": "Recetas IA is a full-bleed market counter: a chalkboard sign (#1f2b22) framed by warm paper and wood tones, where the day's headline is hand-chalked in Caveat and the day's ingredients are stapled cardboard tags. It rejects the generic AI-recipe landing formula — plated-food photo, friendly headline, rounded pill button — in favor of scenes that read as physical counter displays, not software screens. The full application now ships in this world: the Home hero + shared MenuBar chrome, AuthView (login), the /recipe + /user-recipes flow (FormRecipe, RecipeCard, RecipeView, UserRecipesView), and ProfileView (/profile). Each surface picks its own register within the same materials and rules — Home is the fullest choreographed scene and owns the Ticket CTA as its exclusive signature device; Auth is a deliberately quiet, restrained extension; the recipe flow is a 'full market moment' with its own signature objects (order-pad, recipe-card); Profile is a 'member card' moment with its own signature object (an angled-corner ficha de socio with a hanging punch-hole) — the system's fifth distinct card treatment, never a copy of another surface's.",
+    "keyCharacteristics": [
+      "Full-bleed chalkboard scenes on Home, RecipeView, UserRecipesView, and ProfileView; a restrained padded card shell on Auth — full-bleed is a per-surface choice, not a blanket rule",
+      "Hand-chalked display type (Caveat) paired with stencil-label caps (Oswald) for anything functional (tags, nav, CTA, numbered order-pad questions, buttons, corner-stamp labels)",
+      "Warm-paper and tomato-orange accents on a dark chalkboard ground — the accent is reserved for rare, high-priority elements, plus one narrow status-communication use in Toast icon color",
+      "Physical-counter metaphors carried literally into markup: staple-dot tags, a ticket-stub CTA with perforated edges, an order-pad with a perforated notepad strip, a recipe-card with a wood-dark top edge as its sole elevation cue, a member card with an angled cut corner and a hanging punch-hole",
+      "Every reveal-capable surface gets exactly one authored entrance animation using exponential ease-out only, with a full prefers-reduced-motion opt-out — Home's is a full choreographed sequence, every other surface uses one simpler single-element reveal"
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Tomato accent color is reserved for a small, deliberate set of high-priority elements — never body copy, tags, or chrome. A first pass on RecipeCard used the accent for list-item markers; a review round caught this as a literal violation and it was corrected to wood-dark before shipping.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Only two font families carry meaning: Caveat for anything spoken (headline, chalk note, page headings, greetings), Oswald for anything labeled or functional (tags, nav, ticket, captions, form labels, buttons, order-pad numerals, recipe-card headings). Inter is a third, intentionally invisible utility face reserved for body/markdown copy. Auth's FloatLabel labels shipped in Inter by mistake and were corrected to Oswald caps before ship.",
+        "section": "typography"
+      },
+      {
+        "name": "The Safe-Center Rule",
+        "body": "Every flex container that vertically centers content declares justify-content: center; followed by justify-content: safe center; (and align-items: safe center where relevant) — plain center can push tall content above the viewport top on short screens.",
+        "section": "layout"
+      },
+      {
+        "name": "The No-UI-Shadow Rule",
+        "body": "Shadows exist only where the metaphor is a physical object (a tag, a notepad, a card, a bar sitting above content) — never as a generic card/button elevation cue.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do reserve --market-accent (#e2572b) and --market-accent-strong (#b23e1a) for a small, deliberate set of high-priority elements per surface (headline payoff line + CTA ticket on Home; one CTA-weight plain-button per other surface; the Toast error/warn icon). This is the One Accent Rule.",
+      "Do pair Caveat (spoken/display, including page headings and chalk greetings) with Oswald (labeled/functional) per the Two-Voice Rule; use Inter only for long-form body/markdown content.",
+      "Do set fullBleed: true in route meta for any new surface that should escape the app shell's default 2rem padding — but treat it as a per-surface decision, not a default.",
+      "Do use exponential ease-out (cubic-bezier(0.16, 1, 0.3, 1)) for reveal/entrance motion, and always provide a prefers-reduced-motion: reduce fallback.",
+      "Do give every reveal-capable surface at least one authored entrance moment, sized to the surface — a full sequence for a hero scene, a single fade-up/drop-in for a simpler one.",
+      "Do declare justify-content: safe center as an override after justify-content: center on any vertically-centering flex container, per the Safe-Center Rule.",
+      "Do put any override targeting a teleported PrimeVue element (Select overlay, Toast, ProgressBar, future overlays) in src/assets/market-world.css, never in a component-scoped style block.",
+      "Do omit border-radius entirely (not border-radius: 0) when an object needs a border/top-edge accent but must read as sharp-cornered — see RecipeCard.",
+      "Do match a new paper-toned object's inputs to the paper-toned input precedent (order-pad, member card), not Auth's dark-card input precedent — ProfileView's member card briefly shipped with the wrong (dark) precedent before self-correcting.",
+      "Do reuse the established dot/circle-perforation technique (Ticket CTA's perforated edge, order-pad's spiral strip, nav bar's scalloped valance) for any new physical-object edge detail, rather than inventing an unrelated texture."
+    ],
+    "donts": [
+      "Don't use bounce/elastic easing for entrance or state motion — the finish review found and replaced this exact violation on Home; exponential ease-out is this world's motion floor.",
+      "Don't re-import fonts from a live Google Fonts CDN @import; the finish review replaced that with the two self-hosted woff2 files in src/assets/fonts/.",
+      "Don't widen the accent's footprint into body copy, tags, or list/step markers — a first RecipeCard pass used the accent for list markers and a review round corrected it to wood-dark.",
+      "Don't replicate the Ticket CTA's perforated-edge / ticket-number silhouette on any surface other than Home — every other action uses the plain-button family instead.",
+      "Don't invent a destructive/error red — RecipeCard's delete action uses the quieter plain-button-secondary, not a new semantic color.",
+      "Don't stack a corner/caption-style label directly above a page heading as a kicker or eyebrow — this project's craft floor bans that device outright; ProfileView's corner-stamp label was corrected off that exact position before ship. This is a defect the build corrected, not a device to reach for elsewhere.",
+      "Don't assume a component's own root element wins its cascade tie against PrimeVue's dynamically-injected runtime theme CSS — MenuBar's .p-menubar background/border needed !important to hold, the same class of issue as teleported Select/ProgressBar/Toast overrides, but on the component's own root rather than a teleported node."
+    ]
+  }
+}
