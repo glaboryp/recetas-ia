@@ -13,7 +13,8 @@ const router = createRouter({
       name: 'home',
       component: () => import('@/views/HomeView.vue'),
       meta: {
-        requireAuth: false
+        requireAuth: false,
+        fullBleed: true
       }
     },
     {
@@ -21,7 +22,8 @@ const router = createRouter({
       name: 'recipe',
       component: () => import('@/views/RecipeView.vue'),
       meta: {
-        requireAuth: false
+        requireAuth: false,
+        fullBleed: true
       }
     },
     {
@@ -29,7 +31,8 @@ const router = createRouter({
       name: 'login',
       component: () => import('@/views/AuthView.vue'),
       meta: {
-        requireAuth: false
+        requireAuth: false,
+        fullBleed: true
       }
     },
     {
@@ -37,7 +40,8 @@ const router = createRouter({
       name: 'user-recipes',
       component: () => import('@/views/UserRecipesView.vue'),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        fullBleed: true
       }
     },
     {
@@ -45,7 +49,8 @@ const router = createRouter({
       name: 'profile',
       component: () => import('@/views/ProfileView.vue'),
       meta: {
-        requireAuth: true
+        requireAuth: true,
+        fullBleed: true
       }
     }
   ]
