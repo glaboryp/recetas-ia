@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  src: url('./fonts/caveat-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+  src: url('./fonts/oswald-variable.woff2') format('woff2');
+}
+
+:root {
+  --market-bg: #1f2b22;
+  --market-bg-soft: #263427;
+  --market-paper: #f4efe1;
+  --market-wood: #a86a3a;
+  --market-wood-dark: #7a4b28;
+  --market-accent: #e2572b;
+  --market-accent-strong: #b23e1a;
+  --market-chalk: #f6f1e4;
+  --market-chalk-dim: #cfc7ae;
+  --market-ink: #241a10;
+  --market-line: rgba(246, 241, 228, 0.32);
+
+  --market-font-chalk: 'Caveat', cursive;
+  --market-font-label: 'Oswald', sans-serif;
+}
+
+/* Teleported/overlay PrimeVue elements render outside any single component's
+   DOM tree, so these overrides live here (always loaded) rather than in a
+   conditionally-rendered component's scoped or global <style> block. */
+
+.p-select-overlay {
+  background: var(--market-paper) !important;
+  border: 1.5px solid var(--market-wood-dark) !important;
+  border-radius: 3px !important;
+}
+
+.p-select-option {
+  color: var(--market-ink) !important;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.p-select-option.p-select-option-selected {
+  background: var(--market-wood) !important;
+  color: var(--market-paper) !important;
+}
+
+.p-select-option:not(.p-select-option-selected):hover,
+.p-select-option.p-focus:not(.p-select-option-selected) {
+  background: rgba(36, 26, 16, 0.08) !important;
+  color: var(--market-ink) !important;
+}
+
+.p-progressbar {
+  background: var(--market-bg-soft) !important;
+}
+
+.p-progressbar-value {
+  background: var(--market-accent-strong) !important;
+}
+
+.p-toast-message {
+  background: var(--market-paper) !important;
+  border: 1px solid var(--market-wood-dark) !important;
+  border-radius: 3px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28) !important;
+}
+
+.p-toast-summary {
+  font-family: var(--market-font-label) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--market-ink) !important;
+}
+
+.p-toast-detail {
+  font-family: Inter, system-ui, sans-serif !important;
+  color: var(--market-ink) !important;
+}
+
+.p-toast-close-button {
+  color: var(--market-ink) !important;
+}
+
+.p-toast-message-info .p-toast-message-icon,
+.p-toast-message-success .p-toast-message-icon {
+  color: var(--market-wood-dark) !important;
+}
+
+.p-toast-message-error .p-toast-message-icon,
+.p-toast-message-warn .p-toast-message-icon {
+  color: var(--market-accent-strong) !important;
+}
+
+.p-tieredmenu-overlay {
+  background: var(--market-paper) !important;
+  border: 1.5px solid var(--market-wood-dark) !important;
+  border-radius: 3px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28) !important;
+}
+
+.p-tieredmenu-item-link {
+  background: transparent !important;
+}
+
+.p-tieredmenu-item-icon {
+  color: var(--market-wood-dark) !important;
+}
+
+.p-tieredmenu-item-label {
+  color: var(--market-ink) !important;
+  font-family: var(--market-font-label) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+}
+
+.p-tieredmenu-item-content:hover,
+.p-tieredmenu-item.p-focus > .p-tieredmenu-item-content {
+  background: rgba(36, 26, 16, 0.08) !important;
+}
+
+.p-tieredmenu-item-content:hover .p-tieredmenu-item-icon,
+.p-tieredmenu-item.p-focus > .p-tieredmenu-item-content .p-tieredmenu-item-icon {
+  color: var(--market-accent-strong) !important;
+}
+
+.p-tieredmenu-separator {
+  border-color: var(--market-wood-dark) !important;
+  opacity: 0.4;
+}

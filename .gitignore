@@ -30,3 +30,18 @@ coverage
 *.tsbuildinfo
 
 .env
+
+# impeccable-ignore-start
+.impeccable/config.local.json
+.impeccable/hook.cache.json
+.impeccable/*.png
+.impeccable/live/server.json
+.impeccable/live/sessions/
+.impeccable/live/previews/
+.impeccable/live/cache/
+.impeccable/live/*.png
+# impeccable-ignore-end
+
+# Transient Impeccable review/decision artifacts (not meant to be versioned)
+.impeccable/review/
+.impeccable/questions/
