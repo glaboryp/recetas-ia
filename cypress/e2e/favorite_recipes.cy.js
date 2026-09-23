@@ -19,6 +19,6 @@ describe('Favorite recipes', () => {
 
   it('view favorite recipes', () => {
     cy.visit('/user-recipes')
-    cy.contains('h1', 'Recetas guardadas')
+    cy.contains('h1', 'Tus recetas guardadas')
   })
 })

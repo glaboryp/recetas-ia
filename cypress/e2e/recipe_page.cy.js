@@ -22,7 +22,7 @@ describe('Recipe page', () => {
     cy.createRecipe('Queso y jamón', 'Desayuno', 15, 25)
     cy.contains('Preparando tu receta').should('exist')
     cy.wait('@getRecipe')
-    cy.contains('h2', 'Receta')
+    cy.contains('h2', 'Tu receta')
   })
 
   it('create a recipe without ingredients', () => {

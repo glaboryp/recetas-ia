@@ -1,19 +1,21 @@
 <template>
-  <section>
+  <section class="recipe-card">
     <header><div v-html="recipeTitle"></div></header>
-    <div>
+    <div class="recipe-body">
       <div v-html="recipeContent"></div>
     </div>
     <footer>
       <Button
         v-if="props.favorite"
         id="button-delete-favorite"
+        class="btn-secondary"
         label="Eliminar de favoritos"
         @click="deleteRecipe()"
       />
       <Button
         v-else
         id="button-favorite"
+        class="btn-primary"
         label="Guardar receta como favorita"
         icon="pi pi-star"
         iconPos="right"
@@ -114,19 +116,114 @@ const deleteRecipe = () => {
 </script>
 
 <style scoped>
-section {
-  background: #2a2a31fa;
-  color: #ffffff;
-  border-radius: 12px;
+.recipe-card {
+  background: var(--market-paper);
+  color: var(--market-ink);
+  border-top: 4px solid var(--market-wood-dark);
   display: flex;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 1.5rem 1.5rem 1.25rem;
   gap: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
 }
+
 header {
-  font-size: 25px;
+  font-family: var(--market-font-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1.3rem;
+  color: var(--market-wood-dark);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(36, 26, 16, 0.15);
 }
+
+header :deep(strong) {
+  font-weight: 700;
+}
+
+.recipe-body {
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--market-ink);
+  line-height: 1.6;
+}
+
+.recipe-body :deep(h1),
+.recipe-body :deep(h2),
+.recipe-body :deep(h3) {
+  font-family: var(--market-font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+  color: var(--market-wood-dark);
+  margin: 1rem 0 0.4rem;
+}
+
+.recipe-body :deep(p) {
+  margin: 0 0 0.6rem;
+}
+
+.recipe-body :deep(ul),
+.recipe-body :deep(ol) {
+  margin: 0 0 0.6rem;
+  padding-left: 1.4rem;
+}
+
+.recipe-body :deep(li) {
+  margin-bottom: 0.3rem;
+}
+
+.recipe-body :deep(li::marker) {
+  color: var(--market-wood-dark);
+}
+
 footer {
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.btn-primary {
+  background: var(--market-accent-strong) !important;
+  color: var(--market-paper) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-family: var(--market-font-label);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+}
+
+.btn-secondary {
+  background: transparent !important;
+  color: var(--market-ink) !important;
+  border: 1.5px solid var(--market-wood-dark) !important;
+  border-radius: 4px !important;
+  font-family: var(--market-font-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  transition:
+    color 0.15s ease-out,
+    border-color 0.15s ease-out;
+}
+
+.btn-primary:hover {
+  background: var(--market-accent) !important;
+  border: none !important;
+}
+
+.btn-secondary:hover {
+  color: var(--market-accent-strong) !important;
+  border-color: var(--market-accent-strong) !important;
+  background: transparent !important;
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 3px solid var(--market-wood-dark);
+  outline-offset: 2px;
 }
 </style>
