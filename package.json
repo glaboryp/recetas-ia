@@ -15,17 +15,18 @@
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
     "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
     "lint": "eslint . --fix",
+    "lint:check": "eslint .",
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@ai-sdk/google": "^4.0.76",
+    "@ai-sdk/google": "^4.0.84",
     "@primeuix/themes": "^3.0.1",
-    "ai": "^7.0.109",
+    "ai": "^7.0.120",
     "firebase": "^12.19.0",
     "marked": "^18.0.14",
     "pinia": "^4.0.3",
     "pinia-plugin-persistedstate": "^4.7.1",
-    "primeicons": "^8.0.1",
+    "primeicons": "^8.0.2",
     "primevue": "^5.0.1",
     "vue": "^3.5.43",
     "vue-router": "^5.3.1"
@@ -39,13 +40,13 @@
     "cypress": "^16.1.0",
     "eslint": "^10.11.0",
     "eslint-plugin-cypress": "^7.0.2",
-    "eslint-plugin-vue": "^10.11.0",
+    "eslint-plugin-vue": "^10.11.1",
     "globals": "^17.12.0",
     "jsdom": "^30.1.1",
-    "prettier": "^3.9.8",
+    "prettier": "^3.9.9",
     "start-server-and-test": "^3.0.12",
     "unplugin-vue-components": "^32.1.0",
-    "vite": "^8.3.0",
+    "vite": "^8.3.1",
     "vitest": "^5.0.1",
     "vue-eslint-parser": "^10.4.1"
   }
