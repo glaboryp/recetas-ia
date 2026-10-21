@@ -19,9 +19,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@ai-sdk/google": "^4.0.99",
-    "@primeuix/themes": "^3.0.1",
-    "ai": "^7.0.143",
+    "@ai-sdk/google": "^4.0.101",
+    "@primeuix/themes": "^3.0.2",
+    "ai": "^7.0.146",
     "firebase": "^12.19.0",
     "marked": "^18.1.1",
     "pinia": "^4.1.0",
