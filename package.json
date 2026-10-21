@@ -19,21 +19,21 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@ai-sdk/google": "^4.0.99",
-    "@primeuix/themes": "^3.0.1",
-    "ai": "^7.0.143",
+    "@ai-sdk/google": "^4.0.101",
+    "@primeuix/themes": "^3.0.2",
+    "ai": "^7.0.146",
     "firebase": "^12.19.0",
     "marked": "^18.1.1",
     "pinia": "^4.1.0",
     "pinia-plugin-persistedstate": "^4.7.1",
     "primeicons": "^8.0.2",
-    "primevue": "^5.0.2",
+    "primevue": "^5.0.3",
     "vue": "^3.5.44",
     "vue-router": "^5.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@primevue/auto-import-resolver": "^5.0.2",
+    "@primevue/auto-import-resolver": "^5.0.3",
     "@vitejs/plugin-vue": "^6.0.10",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/test-utils": "^2.5.1",
