@@ -17,7 +17,8 @@ describe('Recipe page', () => {
   it('create a correct recipe', () => {
     cy.intercept(
       'POST',
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent'
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent',
+      { fixture: 'gemini-recipe.json', delay: 500 }
     ).as('getRecipe')
     cy.createRecipe('Queso y jamón', 'Desayuno', 15, 25)
     cy.contains('Preparando tu receta').should('exist')

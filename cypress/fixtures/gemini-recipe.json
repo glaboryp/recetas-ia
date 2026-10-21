@@ -1,0 +1,22 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "role": "model",
+        "parts": [
+          {
+            "text": "**Tostada de queso y jamón**\n\nIngredientes para 15 personas:\n- 30 rebanadas de pan\n- 450 g de queso\n- 450 g de jamón\n\nPreparación:\n1. Tuesta el pan.\n2. Coloca el jamón y el queso encima.\n3. Gratina 5 minutos."
+          }
+        ]
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 120,
+    "candidatesTokenCount": 60,
+    "totalTokenCount": 180
+  },
+  "modelVersion": "gemini-3.6-flash"
+}
