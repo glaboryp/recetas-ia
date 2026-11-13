@@ -30,7 +30,7 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v7.4.4
         with:
-          start: pnpm run dev
+          start: pnpm run dev -- --port 4173
         env:
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
