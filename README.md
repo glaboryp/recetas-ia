@@ -17,7 +17,7 @@ Si quieres ver la aplicación en funcionamiento, puedes hacerlo [aquí](https://
 
 ## 🚀 Contribuir
 
-> Necesitas Node.js 24.x y [pnpm](https://pnpm.io/).
+> Necesitas Node.js 26.x y [pnpm](https://pnpm.io/).
 
 1. Crea un [Fork](https://github.com/glaboryp/recetas-ia/fork) del proyecto
 
