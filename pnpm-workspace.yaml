@@ -13,3 +13,5 @@ minimumReleaseAgeExclude:
 
 overrides:
   '@grpc/grpc-js@<1.13.6': ^1.13.6
+  follow-redirects: 1.16.2
+  joi: 18.3.1

@@ -59,17 +59,17 @@ const noContent = computed(() => !props.recipe.content)
 
 const saveRecipe = async () => {
   try {
-    // Firebase can accept the login before the Database connection has
-    // finished attaching the auth token to it; forcing a token fetch here
-    // waits for that handshake so the write below isn't rejected as
-    // unauthenticated on its first attempt.
-    await getAuth().currentUser?.getIdToken()
+    const auth = getAuth()
+    await auth.authStateReady()
+    const user = auth.currentUser
+
+    if (!user) throw new Error('La sesión ha caducado. Vuelve a iniciar sesión.')
 
     const newRecipeKey = push(child(dbRef, 'recipes')).key
 
     const updatedData = {}
     updatedData['recipes/' + newRecipeKey] = props.recipe
-    updatedData['user-recipes/' + authStore.userId + '/' + newRecipeKey] = props.recipe
+    updatedData['user-recipes/' + user.uid + '/' + newRecipeKey] = props.recipe
     await update(dbRef, updatedData)
 
     toast.add({
