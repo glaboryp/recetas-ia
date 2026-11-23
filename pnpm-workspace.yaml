@@ -15,3 +15,5 @@ overrides:
   '@grpc/grpc-js@<1.13.6': ^1.13.6
   follow-redirects: 1.16.2
   joi: 18.3.1
+  "js-beautify>glob": "^14.0.2"
+  "editorconfig>minimatch": "^11.0.1"
